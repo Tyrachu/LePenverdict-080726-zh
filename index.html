@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>判决日：Marine Le Pen 的定罪、上诉与 2027 · Le Figaro × Le Parisien</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;0,900;1,400;1,900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fig-navy:#122148; --fig-navy-dark:#0A1530; --fig-blue:#1B4F8E; --fig-red:#B91C2D;
+  --lp-blue:#1AA8E5; --lp-blue-dark:#0090D6;
+  --noir:#181818; --gris:#8B8B8B; --gris-fonce:#3B3B3B; --gris-clair:#666; --gris-ligne:#D9D9D9;
+  --bg-quote:#F4F7FB; --bg-quote-lp:#F4FAFD; --bg-annot:#FFF8E1; --orange:#C7842F;
+  --ink-zh:#0D2747; --ink-fr:#1B4F8E; --ink-zh-lp:#0A3553; --ink-fr-lp:#1A4E73;
+  --serif:"Times New Roman",Times,"Songti SC","STSong","Source Han Serif SC",serif;
+  --sans:Arial,Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --wordmark:"Bodoni Moda","Bodoni 72","Bodoni MT","Didot","Le Figaro",Garamond,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--sans);font-size:16px;line-height:1.7;color:var(--noir);background:#FAFAF8;
+  max-width:760px;margin:0 auto;padding:0 18px 80px;
+  line-break:strict;word-break:normal;overflow-wrap:break-word;hanging-punctuation:allow-end;
+}
+em.fr,em{font-style:italic;word-break:keep-all;}
+
+/* Sticky control */
+.ctrl{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.96);backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid var(--gris-ligne);display:flex;justify-content:flex-end;align-items:center;
+  padding:8px 18px;margin:0 -18px;}
+.notes-toggle{background:#fff;border:1px solid var(--gris-ligne);border-radius:4px;padding:6px 14px;font-size:12.5px;
+  color:var(--gris-fonce);cursor:pointer;font-family:var(--sans);display:inline-flex;align-items:center;gap:6px;transition:background .15s;}
+.notes-toggle:hover{background:var(--bg-quote);border-color:var(--fig-blue);color:var(--fig-blue);}
+.notes-toggle svg{width:14px;height:14px;}
+
+/* IG head (Figaro) */
+.ig{display:flex;align-items:center;gap:11px;padding:18px 0 14px;}
+.ig-avatar-lp{margin-left:auto;flex-shrink:0;width:46px;height:46px;border-radius:50%;padding:2.5px;background:conic-gradient(from 45deg,#F58529 0deg,#DD2A7B 80deg,#8134AF 160deg,#515BD4 220deg,#1AA8E5 290deg,#F58529 360deg);display:flex;align-items:center;justify-content:center;}
+.ig-avatar-p{width:100%;height:100%;border-radius:50%;background:var(--lp-blue);color:#fff;font-family:var(--wordmark);font-style:italic;font-weight:900;font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;border:2px solid #fff;padding-bottom:1px;}
+@media (max-width:600px){.ig-avatar-lp{width:40px;height:40px;}.ig-avatar-p{font-size:19px;}}
+.ig-ring{width:46px;height:46px;border-radius:50%;background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+  display:flex;align-items:center;justify-content:center;padding:2px;}
+.ig-ring-inner{width:100%;height:100%;background:#fff;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.ig-letter{font-family:var(--wordmark);font-style:italic;font-weight:700;font-size:21px;color:var(--fig-navy);line-height:1;}
+.ig-letter.lp{color:var(--lp-blue);}
+.ig-letters{display:flex;align-items:baseline;gap:1px;}
+.ig-dot{width:2px;height:2px;border-radius:50%;background:var(--gris-clair);margin:0 1.5px;align-self:center;}
+.ig-name-wrap{display:flex;flex-direction:column;gap:2px;}
+.ig-name{font-family:var(--sans);font-weight:700;font-size:14px;color:#000;line-height:1.1;}
+.ig-tagline{font-family:var(--wordmark);font-style:italic;font-size:10.5px;color:var(--gris-clair);line-height:1.2;max-width:260px;}
+
+/* Page title */
+.page-title{font-family:var(--serif);font-size:32px;font-weight:900;line-height:1.18;letter-spacing:-.3px;color:var(--noir);margin:14px 0 8px;}
+.page-title-fr{font-family:var(--serif);font-style:italic;font-size:14.5px;color:var(--gris-clair);line-height:1.4;margin-bottom:4px;}
+.datestrip{border-top:1px solid var(--gris-ligne);border-bottom:2px solid var(--fig-navy);padding:9px 0 8px;margin-top:14px;
+  font-size:11px;color:var(--gris);letter-spacing:1.5px;text-transform:uppercase;}
+.datestrip .sub{display:block;text-transform:none;font-size:10.5px;letter-spacing:.3px;color:var(--gris);margin-top:5px;font-style:italic;}
+.claude-print{font-family:var(--serif);font-style:italic;font-size:11.5px;color:var(--gris);margin:9px 0 14px;text-align:right;}
+
+/* Standfirst */
+.standfirst{font-family:var(--serif);font-size:16.5px;line-height:1.62;color:var(--gris-fonce);
+  border-left:3px solid var(--fig-navy);padding:4px 0 4px 18px;margin:20px 0 6px;}
+.standfirst .note{display:block;font-size:12.5px;font-style:italic;color:var(--gris);margin-top:8px;line-height:1.5;}
+
+/* TOC */
+.toc{border:1px solid var(--gris-ligne);background:#fff;padding:16px 18px;margin:22px 0 30px;}
+.toc-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+.toc-label{font-family:var(--sans);font-size:11px;letter-spacing:1.5px;color:var(--fig-navy);font-weight:700;text-transform:uppercase;}
+.toc-reading{font-family:var(--sans);font-size:11.5px;color:var(--gris);font-style:italic;}
+.toc ol{list-style:none;counter-reset:toc;}
+.toc ol li{counter-increment:toc;padding:7px 0;border-top:1px dotted var(--gris-ligne);}
+.toc ol li:first-child{border-top:none;}
+.toc ol li::before{content:counter(toc,decimal-leading-zero);font-family:var(--wordmark);font-style:italic;font-weight:700;
+  color:var(--fig-red);font-size:14px;margin-right:10px;}
+.toc a{text-decoration:none;color:var(--noir);font-size:14.5px;line-height:1.4;}
+.toc a:hover{color:var(--fig-blue);}
+.toc .src-chip{font-family:var(--sans);font-style:normal;font-size:10px;letter-spacing:.5px;color:var(--gris);margin-left:6px;}
+
+/* Sections */
+section.story{margin:52px 0;scroll-margin-top:60px;}
+.rubrique{color:var(--fig-navy);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;margin-bottom:10px;}
+.rubrique.lp{color:var(--lp-blue-dark);}
+h1.titre{font-family:var(--serif);font-size:23px;font-weight:900;line-height:1.24;letter-spacing:-.2px;color:var(--noir);margin:6px 0 10px;}
+.titre-fr{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--gris-fonce);line-height:1.4;margin-bottom:16px;font-weight:400;}
+.chapo{font-family:var(--serif);font-size:17px;line-height:1.55;color:var(--gris-fonce);margin:16px 0 14px;}
+.signature{font-family:var(--sans);font-size:12px;color:var(--gris);font-style:italic;margin-bottom:22px;
+  border-top:1px solid var(--gris-ligne);border-bottom:1px solid var(--gris-ligne);padding:8px 0;}
+section.story p{margin:14px 0;}
+h2.intertitre{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--noir);margin:30px 0 12px;line-height:1.3;}
+
+/* Interview Q&A (LP styling nested) */
+.interview{border-left:3px solid var(--lp-blue);padding-left:18px;margin:8px 0;}
+.q{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--ink-zh-lp);margin:24px 0 8px;line-height:1.45;}
+.q::before{content:"— ";font-style:normal;font-weight:700;color:var(--lp-blue-dark);font-size:14px;}
+p.a{margin:8px 0 16px;}
+p.a{color:var(--gris-fonce);}
+
+/* Lead blockquote */
+blockquote.lead{background:var(--bg-quote);border-left:4px solid var(--fig-navy);padding:18px 22px;margin:26px 0;}
+blockquote.lead.lp{background:var(--bg-quote-lp);border-left-color:var(--lp-blue);}
+blockquote.lead .zh{font-family:var(--serif);font-size:15.5px;line-height:1.55;color:var(--ink-zh);}
+blockquote.lead.lp .zh{color:var(--ink-zh-lp);}
+blockquote.lead .fr{font-family:var(--serif);font-style:italic;font-size:12.5px;line-height:1.5;color:var(--ink-fr);
+  margin-top:10px;padding-top:10px;border-top:1px dashed var(--gris-ligne);}
+blockquote.lead.lp .fr{color:var(--ink-fr-lp);}
+blockquote.lead .src{display:block;margin-top:8px;font-family:var(--sans);font-size:12px;color:var(--gris-clair);font-style:normal;}
+
+/* Pull quote */
+.pull{font-family:var(--serif);font-weight:700;font-size:21px;line-height:1.4;color:var(--fig-navy);
+  border-top:2px solid var(--fig-navy);border-bottom:2px solid var(--fig-navy);padding:16px 0;margin:30px 0;}
+.pull.lp{color:var(--ink-zh-lp);border-color:var(--lp-blue);}
+.pull .pf{display:block;font-weight:400;font-size:13px;font-style:italic;color:var(--gris-clair);margin-top:8px;line-height:1.45;}
+
+/* Inline FR quote */
+.quote-fr{background:var(--bg-quote);padding:2px 6px;font-family:var(--serif);font-style:italic;font-size:14.5px;color:var(--ink-fr);border-radius:2px;}
+
+/* Annotations */
+.annot{border-bottom:1px dashed var(--fig-navy);cursor:pointer;position:relative;}
+.annot.lp{border-bottom-color:var(--lp-blue);}
+.annot sup{color:var(--fig-blue);font-size:13px;font-weight:700;margin-left:1px;white-space:nowrap;}
+.annot.lp sup{color:var(--lp-blue-dark);}
+.annot-text{display:none;background:var(--bg-annot);border-left:3px solid var(--orange);padding:12px 16px;margin:10px 0;
+  font-size:13.5px;line-height:1.62;color:var(--gris-fonce);}
+.notes-open .annot-text{display:block;}
+.annot-text.open{display:block;}
+.annot-tier{color:var(--orange);font-weight:600;}
+
+/* Encadre */
+.encadre{background:var(--bg-quote);border-top:3px solid var(--fig-navy);padding:18px 22px;margin:36px 0;}
+.encadre.lp{border-top-color:var(--lp-blue);background:var(--bg-quote-lp);}
+.encadre-label{font-family:var(--sans);font-size:11px;letter-spacing:1.5px;color:var(--fig-navy);text-transform:uppercase;margin-bottom:8px;font-weight:700;}
+.encadre.lp .encadre-label{color:var(--lp-blue-dark);}
+.encadre h3{font-family:var(--serif);font-size:19px;font-weight:700;margin:4px 0 12px;color:var(--noir);}
+.encadre p{font-size:14.5px;line-height:1.65;margin:8px 0;}
+
+/* Section source footer */
+.srcfoot{font-size:12px;color:var(--gris);font-style:italic;border-top:1px solid var(--gris-ligne);padding-top:10px;margin-top:20px;}
+
+/* Copyright */
+.copyright{margin:70px 0 30px;padding:24px 0 0;border-top:2px solid var(--fig-navy);font-size:12px;line-height:1.6;color:var(--gris-clair);}
+.copyright .block-zh,.copyright .block-fr{margin:12px 0;}
+.copyright .block-fr{font-style:italic;}
+.copyright .sep-line{border:none;border-top:1px solid var(--gris-ligne);margin:14px 0;}
+.copyright .kiosque-link{color:var(--fig-blue);font-style:italic;}
+.footer-claude{text-align:center;margin-top:20px;font-style:italic;font-size:11.5px;color:var(--gris);}
+
+.totop{position:fixed;right:20px;bottom:70px;width:42px;height:42px;background:var(--fig-navy);color:#fff;border-radius:50%;
+  display:none;align-items:center;justify-content:center;text-decoration:none;font-size:20px;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.18);}
+.totop.visible{display:flex;}
+.tobottom{position:fixed;right:20px;bottom:20px;width:42px;height:42px;background:var(--fig-navy);color:#fff;border-radius:50%;
+  display:none;align-items:center;justify-content:center;text-decoration:none;font-size:20px;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.18);}
+.tobottom.visible{display:flex;}
+
+@media (max-width:600px){
+  .page-title{font-size:27px;} .page-title-fr{font-size:13px;} h1.titre{font-size:20px;}
+  section.story p{font-size:15.5px;} .q{font-size:15.5px;} .pull{font-size:18px;}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+
+/* 量刑对照表 figdata */
+.figdata{border:1px solid var(--gris-ligne);background:#fff;margin:24px 0;padding:0;overflow-x:auto;}
+.figtitle{font-family:var(--sans);font-weight:700;font-size:15px;color:var(--fig-navy);padding:12px 16px 4px;}
+.figsub{font-size:12px;color:var(--gris);padding:0 16px 10px;line-height:1.5;}
+.figdata table{width:100%;border-collapse:collapse;font-size:14px;}
+.figdata th{background:var(--bg-quote);color:var(--fig-navy);font-family:var(--sans);font-weight:700;font-size:12.5px;
+  text-align:left;padding:9px 16px;border-top:1px solid var(--gris-ligne);border-bottom:1px solid var(--gris-ligne);}
+.figdata td{padding:10px 16px;border-top:1px solid #ececec;vertical-align:top;line-height:1.6;}
+.figdata td.lbl{font-weight:600;color:var(--ink-zh);white-space:nowrap;width:34%;}
+.figdata tr:hover td{background:#fafafa;}
+.figsrc{font-size:11.5px;color:var(--gris);padding:9px 16px;border-top:1px solid var(--gris-ligne);background:#fcfcfc;line-height:1.5;}
+@media (max-width:600px){.figdata td.lbl{width:auto;white-space:normal;}.figdata th,.figdata td{padding:8px 10px;font-size:12.5px;}.figdata table{min-width:560px;}}
+.annot-text a{color:var(--fig-blue);text-decoration:underline;text-underline-offset:2px;font-style:italic;}
+.annot-text a:hover{color:var(--lp-blue);}
+.editor-link{font-family:var(--sans);font-size:12.5px;line-height:1.6;color:var(--gris);font-style:italic;
+  border-left:2px solid var(--lp-blue);padding:6px 0 6px 12px;margin:0 0 14px;background:var(--bg-quote-lp);}
+.editor-link strong{color:var(--lp-blue);font-style:normal;}
+.supp-note{font-family:var(--sans);font-size:13px;line-height:1.65;color:var(--gris-fonce);
+  border-left:3px solid var(--lp-blue);padding:10px 14px;margin:16px 0;background:var(--bg-quote-lp);border-radius:0 3px 3px 0;}
+.supp-note .supp-label{display:block;font-size:11px;letter-spacing:.5px;color:var(--lp-blue);font-weight:700;text-transform:uppercase;margin-bottom:6px;}
+.supp-note .supp-src{display:block;font-size:11.5px;color:var(--gris);margin-top:8px;font-style:italic;}
+.supp-timeline{list-style:none;margin:10px 0 4px;padding:0;}
+.supp-timeline li{position:relative;padding:0 0 12px 20px;}
+.supp-timeline li:last-child{padding-bottom:2px;}
+.supp-timeline li::before{content:"";position:absolute;left:0;top:5px;width:0;height:0;
+  border-style:solid;border-width:5px 0 5px 7px;border-color:transparent transparent transparent var(--gris-fonce);}
+.supp-timeline .tl-date{display:block;font-weight:700;font-size:12.5px;color:var(--gris-fonce);letter-spacing:.3px;margin-bottom:2px;}
+.supp-timeline .tl-body{display:block;font-size:12.5px;line-height:1.6;color:var(--gris-fonce);}
+.figaro-poll{border:1px solid var(--gris-ligne);border-top:3px solid var(--fig-navy);background:#fff;margin:26px 0;padding:18px 20px;}
+.figaro-poll .fp-head{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fig-navy);letter-spacing:.5px;border-bottom:2px solid var(--fig-navy);padding-bottom:8px;margin-bottom:12px;}
+.figaro-poll .fp-q{font-family:var(--serif);font-size:14px;line-height:1.5;color:var(--gris-fonce);margin-bottom:6px;}
+.figaro-poll .fp-q strong{color:var(--fig-navy);}
+.figaro-poll .fp-qfr{font-size:12px;color:var(--gris);font-style:italic;line-height:1.45;margin-bottom:14px;}
+.figaro-poll .fp-bars{display:flex;gap:0;margin-bottom:10px;}
+.figaro-poll .fp-oui{background:var(--fig-navy);color:#fff;padding:12px 8px;text-align:center;font-weight:700;}
+.figaro-poll .fp-non{background:#9DB4CC;color:#fff;padding:12px 8px;text-align:center;font-weight:700;}
+.figaro-poll .fp-lbl{font-size:12px;letter-spacing:1px;display:block;}
+.figaro-poll .fp-pct{font-size:20px;display:block;line-height:1.1;}
+.figaro-poll .fp-votants{font-size:11.5px;color:var(--gris);letter-spacing:.5px;}
+.figaro-poll .fp-src{display:block;font-size:11px;color:var(--gris);font-style:italic;margin-top:8px;}
+</style>
+</head>
+
+<body>
+
+<div class="ctrl">
+  <button class="notes-toggle" id="notesToggle">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+    </svg>
+    <span id="notesBtnLabel">Notes</span>
+  </button>
+</div>
+
+<div class="ig">
+  <div class="ig-ring"><div class="ig-ring-inner"><span class="ig-letter">F</span></div></div>
+  <div class="ig-name-wrap">
+    <div class="ig-name">Le Figaro · Le Parisien</div>
+    <div class="ig-tagline">«&nbsp;Sans la liberté de blâmer, il n'est point d'éloge flatteur&nbsp;» — Beaumarchais</div>
+  </div>
+  <div class="ig-avatar-lp"><span class="ig-avatar-p">P</span></div>
+</div>
+
+<h1 class="page-title">她在一种前所未见的法律模糊中参选——Le Pen 重启竞选</h1>
+<div class="page-title-fr">«&nbsp;Marine Le Pen candidate dans un flou juridique inédit&nbsp;» · <em>Le Figaro</em> 头版<br>«&nbsp;Le Pen repart en campagne&nbsp;» · <em>Le Parisien</em> 头版</div>
+
+<div class="datestrip">
+  MARDI 7 – MERCREDI 8 JUILLET 2026 · <em>LE FIGARO</em> N° 25 461 × <em>LE PARISIEN</em> N° 25 465 · L'ÉVÉNEMENT
+  <span class="sub">判决当日与次日双源并置：巴黎上诉法院 7 月 7 日就「国民阵线欧洲议会助理」案作出裁决，<em>Marine Le Pen</em> 当晚在 TF1 宣布参选并将提起最高法院上诉。本页合两报次日(8 juillet)报道，铺开判决落点、司法解剖、上诉悬念、Bardella 侧与政治涟漪五条脉络，另附三篇署名评论。</span>
+</div>
+
+<p class="claude-print">Claude [Anthropic] 译</p>
+
+<p class="standfirst">一纸裁决，既是终点也是起点。上诉法院确认了 <em class="fr">Marine Le Pen</em> 的定罪，却把禁选刑削到刚好让她重新具备参选资格的位置；当晚她在电视上宣布第四次参选，同时确认将提起最高法院上诉。</p>
+
+<div class="toc">
+  <div class="toc-head">
+    <span class="toc-label">Sommaire · 本页目录</span>
+    <span class="toc-reading">全文阅读约 32 分钟</span>
+  </div>
+  <ol>
+    <li><a href="#annonce">判决落点 · 她当晚宣布参选</a><span class="src-chip">LP 07-08 P.2</span></li>
+    <li><a href="#arret">司法解剖 · 一份「用天平称量」的裁决</a><span class="src-chip">LF 07-08 P.3 · LP 07-08 P.3</span></li>
+    <li><a href="#cassation">上诉悬念 · 一次上诉，诸多疑问</a><span class="src-chip">LP 07-08 P.3 · LF 07-08 P.3</span></li>
+    <li><a href="#bardella">Bardella 侧 · 重披「总理相」</a><span class="src-chip">LF 07-08 P.4 · LP 07-08 P.4</span></li>
+    <li><a href="#adversaires">政治涟漪 · 对手、基层与爱丽舍</a><span class="src-chip">LP 07-08 P.5 · P.4</span></li>
+    
+    <li><a href="#schoettl">评论 · <em class="fr">Schoettl</em>：政治生活刑事化的拐点？</a><span class="src-chip">LF 07-08 P.16</span></li>
+    <li><a href="#edito">评论 · <em class="fr">Le Parisien</em> 社论：反建制主义</a><span class="src-chip">LP 07-08 P.2</span></li>
+    <li><a href="#fourquet">评论 · <em class="fr">Fourquet</em> 专访：一种前所未见的处境</a><span class="src-chip">LP 07-08 P.5</span></li>
+  </ol>
+</div>
+
+<article>
+
+<!-- ========================= 1. 判决落点 ========================= -->
+<section class="story" id="annonce">
+  <div class="rubrique lp">LE PARISIEN · FAIT DU JOUR · P.2 · N° 25 465(8 juillet)</div>
+  <h1 class="titre">判决落点：她当晚宣布参选</h1>
+  <p class="titre-fr">Le Pen repart en campagne · par <em class="fr">Alexandre Sulzer</em>(avec Q.L.)</p>
+  <p class="chapo">定罪成立、刑罚减轻、参选资格失而复得。7 月 7 日晚，<em class="fr">Marine Le Pen</em> 在 TF1 宣布参加 2027 年总统大选，同时确认将提起最高法院上诉，指望上诉的中止效力让她无须戴电子手环竞选，并寄望最高法院不会在选举前作出裁决。</p>
+
+  <p>「我早就断定会是她做候选人。她一向有 <span class="annot lp" data-pop="baraka">baraka⁠<sup>*</sup></span>⁠，总能挺过劫难：8 岁时住所 villa Poirier 遭袭、2011 年图尔代表大会对阵 <em class="fr">Bruno Gollnisch</em><span class="annot lp" data-pop="q-gollnisch">⁠<sup>*</sup></span>⁠、与父亲决裂、2017 年对 <em class="fr">Macron</em> 那场失败的辩论……她身上有一种凤凰的东西，总能从灰烬里重生」<span class="annot lp" data-pop="q-phenix">⁠<sup>*</sup></span>⁠，判决前一周，<em class="fr">Marine Le Pen</em> 的一位女性友人如此预言。</p>
+  <div class="annot-text" id="q-gollnisch"><em class="fr">Bruno Gollnisch</em>(1950— )，法学教授、国民阵线元老，曾长期任欧洲议员，2011 年图尔代表大会中与 <em class="fr">Marine Le Pen</em> 竞争党主席落败。本案同为被告。<span class="annot-tier">〔背景层 · 人物〕</span></div>
+  <div class="annot-text" id="q-phenix">原文：«&nbsp;Je suis convaincue que ce sera elle la candidate. Elle a toujours eu la baraka et a toujours survécu aux épreuves […] Elle a un côté phénix qui renaît toujours de ses cendres&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.2 · <em class="fr">Le Pen</em> 的一位女性友人，判决前一周</span></div>
+  <div class="annot-text" id="baraka">baraka(<em class="fr">baraka</em>⁠)⁠：源自阿拉伯语的法语借词，意为「福运、天佑」，法国口语里指一种近乎宿命的好运气。全文多名亲信反复用它来形容 <em class="fr">Le Pen</em> 家族「逢凶化吉」的特质。<br><span style="font-size:12px;color:var(--gris);">source：词源通识（阿拉伯语借词）；法文语境据本篇报道用例</span><span class="annot-tier">〔背景层 · 借词〕</span></div>
+
+  <p>预言应验了。本周二，上诉法院<span class="annot" data-pop="q-courappel">⁠<sup>*</sup></span>⁠为这位 RN 女掌门松动出一线生机：法院虽认定她挪用欧洲议会公款罪成立，却把禁选刑减为 45 个月、其中 30 个月缓刑，使她事实上重新具备参选资格；同时判处一年实刑，可折抵为电子手环形式的居家执行。</p>
+  <div class="annot-text" id="q-courappel">「上诉法院」(<em class="fr">cour d'appel</em>)是法国二审法院，对一审判决作事实与法律的全面复审。本案一审为巴黎司法法院(<em class="fr">tribunal judiciaire</em>)，二审即巴黎上诉法院；其上还有最高法院(<em class="fr">Cour de cassation</em>)，只审法律适用、不审事实。<br><span style="font-size:12px;color:var(--gris);">source：法国司法部 <em class="fr">Justice.fr</em>「司法组织」</span><span class="annot-tier">〔背景层 · 司法机构〕</span></div>
+  
+
+  <p>「我很高兴，法庭把投票的自由还给了法国人，也把参选资格还给了我」，当晚在 TF1 的「20 点新闻」演播室里，<em class="fr">Marine Le Pen</em> 微笑着说——身上还是几小时前在司法宫<span class="annot lp" data-pop="q-palais">⁠<sup>*</sup></span>⁠穿的那件浅粉色外套。她随即确认：</p>
+  <div class="annot-text" id="q-palais">「司法宫」原文 <em class="fr">palais de Justice</em>（另一处作 <em class="fr">palais de l'île de la Cité</em>），指巴黎西岱岛（<em class="fr">île de la Cité</em>）上的司法宫大楼——历史上巴黎主要法院的所在地，本案上诉庭审即在此举行。<span class="annot-tier">〔背景层 · 地点〕</span></div>
+  <blockquote class="lead lp">
+    <p class="zh">「今晚，我是总统选举的候选人。」</p>
+    <p class="fr">«&nbsp;Ce soir, je suis candidate à l'élection présidentielle.&nbsp;»</p>
+    <p class="src"><em class="fr">Marine Le Pen</em> · 2026 年 7 月 7 日晚 · TF1「20 点新闻」</p>
+  </blockquote>
+  <p>她还断言，如今「已经没有哪种情形能让我无法参选」<span class="annot lp" data-pop="q-scenario">⁠<sup>*</sup></span>⁠。她重申与 <em class="fr">Jordan Bardella</em> 的「政治搭档」<span class="annot lp" data-pop="couple">⁠<sup>*</sup></span>⁠关系，表示要与他「很快」启动竞选。就在次日周三上午，RN 的「二人组」将现身 Sarthe 省 La Flèche 的一处集市——一座在上届市镇选举中被 RN 拿下的市镇。</p>
+  <div class="annot-text" id="q-scenario">原文：«&nbsp;Il n'y a plus de scénario où je ne peux pas être candidate&nbsp;»<br><span style="font-size:12px;color:var(--gris);">《<em class="fr">Le Figaro</em>》P.2(Hélin)· <em class="fr">Marine Le Pen</em>，周二晚 TF1</span></div>
+  <div class="annot-text" id="couple">原文作 <em class="fr">couple politique</em>，字面「政治伴侣／政治二人组」，法媒常用以指两位政治人物紧密的搭档关系。<span class="annot-tier">〔背景层 · 用词〕</span></div>
+
+  <h2 class="intertitre">「所以我会去竞选」：一套建立在上诉之上的推理</h2>
+  <p><em class="fr">Marine Le Pen</em> 此前反复说过，她不会戴着电子手环竞选。判决之后，她这样解释自己的决定：</p>
+  <blockquote class="lead lp">
+    <p class="zh">「我很快就下定了决心，因为我早说过——你们知道——我不会戴着电子手环竞选。但既然我可以提起最高法院上诉(她确认将会提起)，而上诉会中止判决的效力，所以我会去竞选。」</p>
+    <p class="fr">«&nbsp;Ma conviction a été très rapidement faite puisque j'avais indiqué, vous le savez, que je ne ferai pas campagne sous bracelet électronique. Mais comme j'ai la possibilité de faire un pourvoi en cassation […], et que le pourvoi en cassation suspend les effets de l'arrêt, je ferai donc campagne.&nbsp;»</p>
+    <p class="src"><em class="fr">Marine Le Pen</em> · 据《<em class="fr">Le Parisien</em>⁠》⁠· 7 月 7 日晚 TF1</p>
+  </blockquote>
+  <p>但这并非 <em class="fr">Marine Le Pen</em> 与核心圈对判决的法律解读。「如果她被判两年禁选，她本不会提起上诉，也就不会参选——因为上诉会中止禁选的执行；而那正是她原本预期的结果」<span class="annot lp" data-pop="q-lecture1">⁠<sup>*</sup></span>⁠，核心圈层的一名成员透露。「正因如此，她才发展出『戴手环无法参选』这套说法」<span class="annot lp" data-pop="q-lecture2">⁠<sup>*</sup></span>⁠，另一人补充。上周三在 LCI，她曾再次强调，自己不能「依赖一位法官」来「准许她去 Romorantin 开大会、或去 Hénin-Beaumont 赶集」<span class="annot lp" data-pop="q-romorantin">⁠<sup>*</sup></span>⁠。</p>
+  <div class="annot-text" id="q-romorantin">原文：«&nbsp;dépendre d'un magistrat […] pour l'autoriser à aller faire un meeting à Romorantin ou aller sur un marché à Hénin-Beaumont&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.2 · <em class="fr">Marine Le Pen</em>，上周三 LCI</span></div>
+  <div class="annot-text" id="q-lecture2">原文：«&nbsp;C'est pour cela qu'elle a développé la théorie de l'impossibilité d'être candidate sous bracelet électronique&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.2 · RN 另一名骨干</span></div>
+  <div class="annot-text" id="q-lecture1">原文：«&nbsp;Si elle avait été condamnée à deux ans d'inéligibilité, elle n'aurait pas fait de pourvoi en cassation — et n'aurait pas été candidate — car celui-ci aurait suspendu l'exécution de l'inéligibilité. Et c'est l'option à laquelle elle s'attendait&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.2 · RN 核心圈层一名成员</span></div>
+
+  <h2 class="intertitre">法庭上：不流露丝毫情绪</h2>
+  <p>然而那天午后开庭之初，这只「凤凰」却化作了「斯芬克斯」。抵达时她对几名记者淡淡撂下一句「还好」，随后在庭前一张桌旁坐下——正是她当年作为年轻律师宣誓的那间厅；落座前，她与欧洲议会一方(本案民事原告方)的律师 <span class="annot lp" data-pop="maisonneuve"><em class="fr">Patrick Maisonneuve</em>⁠<sup>*</sup></span>⁠ 擦身而过，带着一丝反讽行了个屈膝礼。当审判长<span class="annot" data-pop="q-presidente">⁠<sup>*</sup></span>⁠ <em class="fr">Michèle Agi</em> 点到她的名字，她起身、理了理一缕头发、走到庭前，得知自己的刑罚——但 <em class="fr">Marine Le Pen</em> 不流露丝毫情绪。合议宣读完毕，她与 <em class="fr">Louis Aliot</em><span class="annot" data-pop="q-aliot">⁠<sup>*</sup></span>⁠ 及律师们商议片刻，铁青着脸、一言不发地离开。目的地：RN 在巴黎十六区那座簇新的竞选总部，整个下午她把自己和 <em class="fr">Jordan Bardella</em> 及双方幕僚关在里面。辩护律师 <span class="annot lp" data-pop="bosselut"><em class="fr">Rodolphe Bosselut</em>⁠<sup>*</sup></span>⁠ 丢下一句「现在，我们要通盘考量整个裁决」，自称「部分」满意：「这是个好的开端。」<span class="annot lp" data-pop="q-bosselut">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-aliot"><em class="fr">Louis Aliot</em>（1969— ），国民联盟（RN）副主席、<strong>佩皮尼昂市长</strong>（<em class="fr">Perpignan</em>，2020 年起，2026 年 3 月首轮连任），2026 年 4 月起兼任佩皮尼昂地中海大都会区主席。曾长期任大区议员；2009—2019 年间为 <em class="fr">Marine Le Pen</em> 的伴侣。本案中同为被告。<br><span style="font-size:12px;color:var(--gris);">source：<em class="fr">Wikipédia</em>「<em class="fr">Louis Aliot</em>」、<em class="fr">France 3 Occitanie</em>（2026-4）、RN 官网（<em class="fr">rassemblementnational.fr</em>）</span><span class="annot-tier">〔背景层 · 人物〕</span></div>
+  <div class="annot-text" id="q-presidente">「审判长」原文 <em class="fr">présidente</em>（<em class="fr">Michèle Agi</em>）。在法国合议庭审判中，<strong>由一名「庭长／审判长」（<em class="fr">président(e) de la cour</em>）主持庭审、宣读裁决，另有两名陪审法官（<em class="fr">assesseurs</em>）共同评议</strong>。本案上诉由三名女法官组成合议庭，<em class="fr">Michèle Agi</em> 即主持并宣判的审判长。<br><span style="font-size:12px;color:var(--gris);">source：《<em class="fr">Le Figaro</em>》2026-7-8 P.3（<em class="fr">Durand-Souffland</em>）、《<em class="fr">Le Parisien</em>》2026-7-8 P.2；司法组织据法国司法部 <em class="fr">Justice.fr</em></span><span class="annot-tier">〔背景层 · 司法职务〕</span></div>
+  <div class="annot-text" id="q-bosselut">原文：«&nbsp;Maintenant, nous réfléchissons à l'ensemble de la décision […] C'est un bon début&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.2 · Me <em class="fr">Rodolphe Bosselut</em>，自称「partiellement」满意</span></div>
+  <div class="annot-text" id="maisonneuve">欧洲议会一方的代理律师之一。欧洲议会在本案中是「民事原告方」(<em class="fr">partie civile</em>⁠)⁠——即因被告犯罪而受损、在刑事诉讼中一并提出赔偿请求的一方，故其律师与 <em class="fr">Le Pen</em> 的辩护律师处于对立立场。另一位代理律师为 <em class="fr">Bérénice de Warren</em>⁠。<span class="annot-tier">〔背景层 · 人物〕</span></div>
+  <div class="annot-text" id="bosselut"><em class="fr">Marine Le Pen</em> 的辩护律师之一，另一位为 <em class="fr">Sandra Chirac Kollarik</em>⁠。二人在上诉中主推「刑法第 432-15 条不适用于欧洲议员」这一法律论点。<br><span style="font-size:12px;color:var(--gris);">source：据《<em class="fr">Le Parisien</em>》《<em class="fr">Le Figaro</em>》2026-7-8 报道</span><span class="annot-tier">〔背景层 · 人物〕</span></div>
+
+  <p>判决一出，众多骨干立刻给「老大」发消息，劝她第四度参选。前 FN 元老 <span class="annot lp" data-pop="arnautu"><em class="fr">Marie-Christine Arnautu</em>⁠<sup>*</sup></span>⁠ 到场声援：「门开着，她该迈进去。」<span class="annot lp" data-pop="q-arnautu">⁠<sup>*</sup></span>⁠但也有 RN 骨干迟疑：「很多人出于感情推她。可细想却让人犹豫，事情很复杂，这意味着要把自己完全交到一位刑罚执行法官手里……」<span class="annot lp" data-pop="q-hesite">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-hesite">原文：«&nbsp;Beaucoup de gens la poussent par affection. Mais la réflexion pousse à hésiter, les choses sont compliquées, ça suppose de s'en remettre entièrement à un juge d'application des peines…&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.2 · RN 一名骨干</span></div>
+  <div class="annot-text" id="q-arnautu">原文：«&nbsp;La porte est ouverte, il faut qu'elle s'y engage&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.2 · <em class="fr">Marie-Christine Arnautu</em></span></div>
+  <div class="annot-text" id="arnautu">国民阵线／国民联盟资深人物、前欧洲议员，长期追随 <em class="fr">Le Pen</em> 家族。<span class="annot-tier">〔背景层 · 人物〕</span></div>
+
+  <p>不过，这一情形并未排除：若最高法院不撤销上诉庭裁决(此为较可能的一种)，她仍将背着一年实刑、因而仍要戴手环。而最高法院曾在 2025 年 4 月表示，若被诉，它可能在 2027 年 1 月前作出裁决——那正值竞选期间。RN 方面称，这一说法只在「禁选刑仍在生效时」才成立<span class="annot lp" data-pop="q-encore">⁠<sup>*</sup></span>⁠。议员 <em class="fr">Bruno Bilde</em> 说：「她既已重新具备参选资格，最高法院还会在两个月内裁决吗？我看不出司法日程现在有什么理由要加速」<span class="annot lp" data-pop="q-bilde">⁠<sup>*</sup></span>⁠——但他也承认，在这一点上「没有任何保证」。他接着感叹：「前阵子那股小调门都说她完了。她证明了自己那种不可战胜、不锈不腐的一面。有点像当年的 <em class="fr">Mitterrand</em> 和 <em class="fr">Chirac</em>。而这一点，会很加分！」</p>
+  <div class="annot-text" id="q-encore">意即：最高法院原先「2027 年 1 月前裁决」的表态，是以当时那道<strong>五年禁选刑仍然有效</strong>为前提的。如今上诉法院已把禁选刑削减、<em class="fr">Le Pen</em> 重获参选资格，RN 据此主张最高法院已无加速裁决的理由。<br><span style="font-size:12px;color:var(--gris);">source：据《<em class="fr">Le Parisien</em>》2026-7-8 P.2（<em class="fr">Sulzer</em>）述 RN 说法</span><span class="annot-tier">〔背景层 · 语义〕</span></div>
+  <div class="annot-text" id="q-bilde">原文：«&nbsp;La Cour de cassation va-t-elle statuer en deux mois alors qu'elle est de nouveau éligible ? Je ne vois pas pourquoi il y aurait maintenant une accélération du calendrier judiciaire […] La petite musique disait qu'elle était morte ces derniers temps. Elle a démontré son côté invincible, inoxydable. Un peu comme Mitterrand et Chirac l'avaient fait. Et ça, ça va compter beaucoup !&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.2 · 议员 <em class="fr">Bruno Bilde</em>(另承认「aucune garantie」)</span></div>
+
+  <p>「没有人是我。我身上的那些发条——驱动我的动力，与那些曾轮流掌权的人截然不同」<span class="annot lp" data-pop="q-ressorts">⁠<sup>*</sup></span>⁠，2023 年 3 月她曾在小圈子里放话。而家族圈中一人不久前如此收束：</p>
+  <div class="annot-text" id="q-ressorts">原文：«&nbsp;Personne n'est moi. Les ressorts qui sont les miens ne sont pas ceux de ceux qui se sont succédé au pouvoir&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.2 · <em class="fr">Marine Le Pen</em>，2023 年 3 月小范围</span></div>
+  <blockquote class="lead lp">
+    <p class="zh">「<em class="fr">Le Pen</em> 家的人，是不会停下的。若要停，除非死亡……」</p>
+    <p class="fr">«&nbsp;Un Le Pen, ça ne s'arrête pas. Ça s'arrête quand c'est mort…&nbsp;»</p>
+    <p class="src">据《<em class="fr">Le Parisien</em>⁠》⁠引 <em class="fr">Le Pen</em> 家族圈一名成员</p>
+  </blockquote>
+  <div class="srcfoot">本节译自《<em class="fr">Le Parisien</em>⁠》⁠· 2026 年 7 月 8 日 · N° 25 465 · P.2 · 署名 <em class="fr">Alexandre Sulzer</em>(avec Q.L.)· 原报此处配图，场景：巴黎一区，本周二——上诉法院的裁决在十五个月的悬念之后，终为 <em class="fr">Marine Le Pen</em> 的参选打开道路。</div>
+</section>
+
+<!-- ========================= 2. 司法解剖 ========================= -->
+<section class="story" id="arret">
+  <div class="rubrique">LE FIGARO · L'ÉVÉNEMENT · P.3 · N° 25 461(8 juillet)</div>
+  <h1 class="titre">司法解剖：一份「用天平称量」的裁决，如今又悬于最高法院</h1>
+  <p class="titre-fr">Un arrêt au trébuchet désormais suspendu à la décision de la Cour de cassation · par <em class="fr">Stéphane Durand-Souffland</em></p>
+  <p class="chapo">案情很重，刑罚却减轻了。上诉法院在确认十二名被告有罪的同时，大幅下调了一审量刑——尤其是那道曾引起轩然大波、附即时执行的五年禁选刑。<span class="annot" data-pop="q-5ans">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-5ans">本文「禁选」即法语 <em class="fr">inéligibilité</em>，指<strong>丧失被选举权</strong>(不得被选为公职)，而非丧失投票权。它属「补充刑」(<em class="fr">peine complémentaire</em>)——主刑(监禁、罚金)之外附加的资格刑。此处即剥夺被选举权五年，使其五年内不得参选任何公职。一审并对该刑附「即时执行」(见下文注)，故虽可上诉仍立即生效。<span class="annot-tier">〔背景层 · 法律〕</span></div>
+
+  <p>案情很重，刑罚却减轻了。在「国民阵线欧洲议会助理」一案中，巴黎上诉法院本周二作出了一份<span class="annot" data-pop="byzantin">繁复曲折⁠<sup>*</sup></span>⁠的裁决。它一面确认包括 <em class="fr">Marine Le Pen</em> 在内、被控挪用公款或共犯的十二名被告有罪，一面又将一审所判的刑罚显著下调——首当其冲的，正是那道附即时执行、曾耗费大量笔墨的五年禁选补充刑。</p>
+  <div class="annot-text" id="byzantin">原文用 <em class="fr">byzantin</em>(拜占庭式的)一词，在法语里形容论证极其繁复、层层设限、细节缠绕的文本或决定。记者以此点出这份裁决在「定罪从严、量刑从宽」之间反复权衡的曲折结构。<span class="annot-tier">〔背景层 · 用词〕</span></div>
+
+  <p><em class="fr">Marine Le Pen</em> 在下午一点十五分左右步入闷热的法庭<span class="annot" data-pop="q-1313">⁠<sup>*</sup></span>⁠。浅粉色外套、白色衬衫、黑色长裤，神情紧闭，她坐回今年一、二月庭审时的位置。案中其余当事人也各就各位，唯独 76 岁的 <em class="fr">Bruno Gollnisch</em> 缺席。她的三名最亲近的党内伙伴——议员 <em class="fr">Laure Lavalette</em>、<em class="fr">Caroline Parmentier</em> 与 <em class="fr">Jean-Philippe Tanguy</em>——到庭声援，全程一言不发<span class="annot" data-pop="q-proches">⁠<sup>*</sup></span>⁠。</p>
+  <div class="annot-text" id="q-1313">到庭时刻两报记法略异，均照录：《<em class="fr">Le Figaro</em>》司法解剖稿(<em class="fr">Durand-Souffland</em>)记「13 h 15」；同报头版主稿(<em class="fr">Hélin</em>)记「<em class="fr">À 13 h 13, Marine Le Pen est apparue, veste rose pâle, impassible</em>」(13 h 13，浅粉外套、面无表情)。<span class="annot-tier">〔背景层 · 数值口径〕</span></div>
+  <div class="annot-text" id="q-proches">原文：«&nbsp;Les députés nationalistes Laure Lavalette, Caroline Parmentier et Jean-Philippe Tanguy, trois de ses plus proches, étaient présents au tribunal pour la soutenir et n'ont pas lâché le moindre mot&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.2(Hélin)</span></div>
+  
+
+  <p>一点半。审判长 <em class="fr">Michèle Agi</em> 分秒不差，用四十分钟就把这份万众瞩目的裁决宣读完毕。解释不多，只重申了指引三位合议法官思考的「大原则」<span class="annot" data-pop="q-grandsprincipes">⁠<sup>*</sup></span>⁠，并当场驳回辩方提出的主要论点。「欧洲议员是负有公共服务职责的人」，法庭认定，「欧洲经费是在其履职框架内交付给议员的公共资金」。<span class="annot" data-pop="q-cour1">⁠<sup>*</sup></span>⁠因此，惩治挪用公款的刑法第 432-15 条完全适用于本案<span class="annot" data-pop="q-432">⁠<sup>*</sup></span>⁠，与 <em class="fr">Le Pen</em> 律师的主张相反。法律空间一经打开，法庭即指斥被告为阻止欧洲议会发现挪用而施展的种种「操作」——这些「抽血」用于给被包装成议会助理的极右翼党务干部发薪。</p>
+  <div class="annot-text" id="q-432">法国《刑法典》第 432-15 条，规定「公共会计人员、公共权力受托人或负有公共服务职责者」挪用公款罪。本案核心法律争点即：欧洲议员是否属于该条所列主体——若不属于，则该罪名不成立。<br><span style="font-size:12px;color:var(--gris);">source：法国《刑法典》第 432-15 条（Légifrance）</span><span class="annot-tier">〔背景层 · 法律〕</span></div>
+  <div class="annot-text" id="q-grandsprincipes">原文 <em class="fr">grands principes</em>，指法庭在量刑时援引的根本性法律原则(如刑罚与过错相称、须顾及选民选择自由等)，而非对个案事实的具体裁断。<span class="annot-tier">〔背景层 · 用词〕</span></div>
+  <div class="annot-text" id="q-cour1">原文：«&nbsp;Le député européen est une personne chargée du service public […] Les fonds européens sont des fonds publics remis aux députés dans le cadre de leur mission&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.3 · 上诉法院合议庭</span></div>
+
+  <p>不出所料，法官指出这是「横跨三届任期的严重事实」<span class="annot" data-pop="q-cour2">⁠<sup>*</sup></span>⁠，无视欧洲议会一再重申须严格遵守经费使用规则的提醒。但法官也强调，未发现任何个人从中牟利：舞弊行为的目的只是给当时财政窘迫的 FN 输血。</p>
+  <div class="supp-note"><span class="supp-label">案件起因 · 时间线（报纸口径为主，† 处为源外公开资料补注）</span>
+  <ul class="supp-timeline">
+    <li><span class="tl-date">2004–2016 年</span><span class="tl-body">被告让本应由欧洲议会出资、服务于议员的"议会助理"名实不符——领着议会薪水，实则为党（当时的国民阵线 FN，今 RN）工作。一审法院将其定性为一套"<em class="fr">système</em>"（体系），检方在上诉时沿用。</span></li>
+    <li><span class="tl-date">2011–2012 年</span><span class="tl-body">据《<em class="fr">Le Figaro</em>》头版主稿引司法认定：该"体系"最初由 <em class="fr">Jean-Marie Le Pen</em> 发起，其女 <em class="fr">Marine</em> 接掌国民阵线后"知情且自愿地"予以延续（《<em class="fr">Le Parisien</em>》引判决理由同旨：挪用"在 <em class="fr">Jean-Marie Le Pen</em> 直接推动、<em class="fr">Marine Le Pen</em> 接手延续下"进行）。<strong><em class="fr">Jean-Marie Le Pen</em> 本人亦在被告之列，但已于 2025 年 1 月 7 日、一审宣判前去世，享年 96 岁</strong>；按法国刑诉规则，被告死亡即终止对其的刑事追诉，故最终判决未对他量刑。</span></li>
+    <li><span class="tl-date">2014 年 6 月</span><span class="tl-body">一封寄往 OLAF 的<strong>匿名信</strong>触发关注，矛头指向 FN 两名"议会助理"——Marine Le Pen 的办公室主任 <em class="fr">Catherine Griset</em>、及其贴身保镖 <em class="fr">Thierry Légier</em>。整起案件由此发端。<sup>†</sup></span></li>
+    <li><span class="tl-date">2015 年 2 月底–3 月</span><span class="tl-body">FN 组织架构图经媒体曝光，其中列出的"议会助理"实为党工作。据《<em class="fr">Le Parisien</em>》，挪用就此终止，欧洲议会提起诉状（<em class="fr">plainte</em>）、并作为民事原告（<em class="fr">partie civile</em>）参加诉讼。<br>其具体经过：架构图显示 24 名 FN 欧洲议员助理中有 <strong>20 人</strong>同时在党内担任正式职务；时任议会主席 <em class="fr">Martin Schulz</em> 于 <strong>3 月 9 日（周一）</strong>正式将此案提交<strong>欧盟反欺诈办公室（<em class="fr">OLAF</em>）</strong>、并通知法国司法部门；巴黎检方随后于 <strong>3 月 24 日</strong>启动调查。<sup>†</sup></span></li>
+    <li><span class="tl-date">审理认定</span><span class="tl-body">法院将挪用"横跨十一年、三届任期"、"无视欧洲议会关于遵守规章的一再提醒"，以及"与其他政党之间的平等被破坏"（<em class="fr">rupture d'égalité</em>）列为加重情节；但同时认定被告并无个人牟利。（赔付与罚金的具体数额见下文正文及注释。）</span></li>
+  </ul>
+  <span class="supp-src">source：《<em class="fr">Le Figaro</em>》2026-7-8 P.2 头版主稿（<em class="fr">Lucas Hélin</em>）；《<em class="fr">Le Parisien</em>》2026-7-8 P.3「DÉCISION」（<em class="fr">Timothée Boutry</em>）「<em class="fr">Une infraction qui court sur plus de onze ans</em>」一节；法院损害认定见巴黎上诉法院新闻公报（<em class="fr">cours-appel.justice.fr</em>）。<br><strong>†</strong> 源外公开资料补注（2014 年匿名信及所涉两名助理、组织架构图 20/24、Schulz 于 2015-3-9 提交 OLAF 并通知法国司法、巴黎检方 3-24 介入）：据欧洲议会官方新闻稿（<em class="fr">europarl.europa.eu</em>，2015-3-9）、<em class="fr">France 24</em>、<em class="fr">RTBF</em>、<em class="fr">Europe 1</em>、<em class="fr">Touteleurope.eu</em> 及法文维基「<em class="fr">Affaire des assistants parlementaires du FN</em>」条目。</span></div>
+  <div class="annot-text" id="q-cour2">原文：«&nbsp;faits graves qui s'étendent sur trois mandatures&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.3 · 上诉法院合议庭</span></div>
+
+  <p>尤为关键的是，就禁选补充刑，法庭提醒：在案发年代，对侵害廉洁罪<span class="annot" data-pop="q-probite">⁠<sup>*</sup></span>⁠判处禁选刑并非强制(立法此后才作了改变)。法庭认为，它有责任「就制裁相对于当选权所受侵害的比例是否恰当作出斟酌，而当选权又须联系到候选自由、乃至选民选择自由——后者正是民主选举得以表达的条件」。<span class="annot" data-pop="q-cour3">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-probite">「侵害廉洁罪」(<em class="fr">atteintes à la probité</em>)是法国《刑法典》里的一整类罪名的统称，涵盖挪用公款、受贿、以权谋私、非法牟利、偏私等公职人员违背廉洁义务的犯罪。本案的「挪用公款」(第 432-15 条)即属其中之一。<br><span style="font-size:12px;color:var(--gris);">source：法国《刑法典》「侵害廉洁罪」章（Légifrance）；<em class="fr">Wikipédia</em>「<em class="fr">Détournement de fonds publics</em>」</span><span class="annot-tier">〔背景层 · 法律〕</span></div>
+  <div class="annot-text" id="q-cour3">原文：«&nbsp;apprécier la proportionnalité de la sanction au regard de l'atteinte portée au droit d'éligibilité, auquel doivent être rattachées la liberté des candidatures mais aussi la liberté de choix de l'électeur, condition d'expression du suffrage démocratique&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.3 · 上诉法院合议庭</span></div>
+
+  <blockquote class="lead">
+    <p class="zh">如此判处 <em class="fr">Marine Le Pen</em>，上诉法院并未阻止她参加下一届总统大选。但要走通这条路，她就得立刻投身竞选、并放弃一场「得不偿失」的最高法院上诉才行。<span class="annot" data-pop="q-perdant">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-perdant">此为《<em class="fr">Le Figaro</em>》记者 <em class="fr">Durand-Souffland</em> 的分析判断，非 <em class="fr">Le Pen</em> 本人的选择：在他看来，上诉「怎么走都输」(<em class="fr">perdant-perdant</em>)——上诉若成功撤销裁决，一审那道附即时执行的五年禁选可能复活、反使她无法参选；若被驳回，则数月已逝、手环开始执行，递交候选申请又为时太晚。因此他认为「立刻参选、放弃上诉」才是稳妥之选。但 <em class="fr">Le Pen</em> 当晚即宣布将提起上诉——记者的这一判断与她的实际决定正好相反。<span class="annot-tier">〔分析层 · 记者观点〕</span></div>
+    <p class="fr">En condamnant de la sorte Marine Le Pen, la cour d'appel de Paris ne l'empêche pas de concourir à la prochaine élection présidentielle. Encore faut-il qu'elle se lance tout de suite dans la course en renonçant à un pourvoi en cassation perdant-perdant.</p>
+    <p class="src">原报以加框大字呈现 · <em class="fr">Le Figaro</em> P.3</p>
+  </blockquote>
+
+  <p><em class="fr">Michèle Agi</em> 已讲了十五分钟，众人以为她会从「大原则」转入裁决动机的阐释，却不然——她径直逐项念起刑罚。这些刑罚均低于一审：监禁与禁选的刑期一律附整体缓刑，唯独 <em class="fr">Marine Le Pen</em> 与 <em class="fr">Bruno Gollnisch</em> 例外。下面是主要被告的一审与终审对照。</p>
+
+  <div class="figdata">
+    <div class="figtitle">主要被告：一审 → 终审量刑对照<span class="annot" data-pop="q-table-source">⁠<sup>*</sup></span>⁠</div>
+    <div class="figsub">一审：2025 年 3 月 31 日 巴黎司法法院；终审：2026 年 7 月 7 日 巴黎上诉法院。「禁选」= <em class="fr">inéligibilité</em>；「即时执行」= <em class="fr">exécution provisoire</em>（判决虽可上诉仍立即生效）。一审数据据官方判决与 franceinfo、Public Sénat 等报道核录。</div>
+    <table>
+      <tr><th class="lbl">被告</th><th>一审（2025-3-31）</th><th>终审（2026-7-7）</th></tr>
+      <tr><td class="lbl"><em class="fr">Marine Le Pen</em></td><td>4 年监禁（含 2 年实刑）+ 10 万欧元罚金 + <strong>5 年禁选（即时执行）</strong></td><td>3 年监禁（含 1 年实刑，电子监控执行）+ 10 万欧元罚金 + 45 个月禁选（含 30 个月缓刑）</td></tr>
+      <tr><td class="lbl"><em class="fr">Bruno Gollnisch</em>（缺席）</td><td>3 年监禁（含 2 年缓刑，电子监控）+ 5 万欧元罚金 + 5 年禁选（即时执行）</td><td>3 年监禁缓刑 + 2,5 万欧元罚金 + 1 年禁选</td></tr>
+      <tr><td class="lbl"><em class="fr">Louis Aliot</em></td><td>12 个月监禁（含 6 个月缓刑，电子监控）+ 8 千欧元罚金 + 3 年禁选（即时执行）</td><td>1 年监禁 + 5 千欧元罚金 + 2 年禁选（均缓刑）→ 保住 Perpignan 市长之位</td></tr>
+      <tr><td class="lbl"><em class="fr">Julien Odoul</em><span class="annot" data-pop="q-odoul">⁠<sup>*</sup></span>⁠</td><td>8 个月监禁缓刑 + 1 年禁选</td><td>8 个月监禁 + 1 年禁选（均缓刑）→ 保住 Yonne 省议员席位</td></tr>
+      <tr><td class="lbl"><em class="fr">Wallerand de Saint-Just</em><span class="annot" data-pop="q-saintjust">⁠<sup>*</sup></span>⁠（FN 前司库）</td><td>3 年监禁（含 1 年实刑）+ 5 万欧元罚金 + 3 年禁选</td><td>3 年监禁缓刑 + 5 万欧元罚金 + 1 年禁选</td></tr>
+    </table>
+    <div class="figsrc">终审列照录《<em class="fr">Le Figaro</em>》原报（<em class="fr">Durand-Souffland</em>），一审列由译者据官方判决与权威报道补入，以便对照。赔偿与损失金额一项，两报口径略有出入，已在正文「向欧洲议会赔付…金额」处的注释中并陈说明；各数值均按原文照录。</div>
+  <div class="annot-text" id="q-odoul"><em class="fr">Julien Odoul</em>（1985— ），<strong>约纳省国民联盟（RN）议员</strong>（<em class="fr">Yonne</em>，2022 年首次当选、2024 年连任）、RN 全国发言人，曾任 <em class="fr">Marine Le Pen</em> 2022 年总统竞选发言人。本案中同为被告。<br><span style="font-size:12px;color:var(--gris);">source：法国国民议会官网（<em class="fr">assemblee-nationale.fr</em>）、<em class="fr">LCP</em>（2026-7-7）、<em class="fr">Contexte</em></span><span class="annot-tier">〔背景层 · 人物〕</span></div>
+  <div class="annot-text" id="q-saintjust"><em class="fr">Wallerand de Saint-Just</em>（1950— ），律师、<strong>国民阵线（FN）前司库</strong>（2009—2021 年在任），现任法兰西岛大区议会 RN 党团主席。长期担任 <em class="fr">Jean-Marie Le Pen</em>、<em class="fr">Bruno Gollnisch</em> 及该党的辩护律师。本案中同为被告，被控为挪用「提供积极协助」。<br><span style="font-size:12px;color:var(--gris);">source：<em class="fr">Wikipédia</em>「<em class="fr">Wallerand de Saint-Just</em>」、<em class="fr">Les Jours</em>、<em class="fr">La Gazette France</em>（2026-1）</span><span class="annot-tier">〔背景层 · 人物〕</span></div>
+  </div>
+  <div class="annot-text" id="q-table-source"><strong>关于本表数据</strong>：终审列（2026-7-7）逐项照录《<em class="fr">Le Figaro</em>》报道；一审列（2025-3-31）由译者据官方判决与权威媒体报道补入，供对照。<br><strong>表述说明</strong>：<em class="fr">Saint-Just</em> 一审「3 年监禁（含 1 年实刑）」照录《<em class="fr">Le Figaro</em>》原文（<em class="fr">3 ans dont 1 ferme</em>）；官方与部分媒体表述为「3 年含 2 年缓刑」——二者所指相同（3 年 = 1 年实刑 + 2 年缓刑），仅陈述角度不同。<br><strong>source</strong>：一审／终审各被告刑罚见 ① franceinfo（11 名被告逐一列出）：<a href="https://www.franceinfo.fr/politique/front-national/affaire-des-assistants-fn-au-parlement-europeen/marine-le-pen-bruno-gollnisch-louis-aliot-voici-les-11-condamnations-a-l-issue-du-proces-en-appel-des-assistants-parlementaires-du-fn_8089790.html" target="_blank" rel="noopener">franceinfo.fr</a>；② Public Sénat（判决当日直播）：<a href="https://www.publicsenat.fr/actualites/politique/direct-suivez-le-delibere-du-proces-en-appel-de-marine-le-pen" target="_blank" rel="noopener">publicsenat.fr</a>；③ Touteleurope（欧盟事务媒体）：<a href="https://www.touteleurope.eu/vie-politique-des-etats-membres/proces-des-assistants-du-rn-marine-le-pen-condamnee-en-appel-mais-eligible-a-l-election-presidentielle-2027/" target="_blank" rel="noopener">touteleurope.eu</a>。<span class="annot-tier">〔背景层 · 数据溯源〕</span></div>
+
+  <p><em class="fr">Marine Le Pen</em> 被传唤到庭。审判长宣布，她在 2009 至 2016 年间，先以欧洲议员身份挪用公款、后以党主席身份构成共犯。「以教唆方式参与的共犯，比提供帮助与协助者更危险」，法庭厉声道。<span class="annot" data-pop="q-cour4">⁠<sup>*</sup></span>⁠这话让人以为，这位被检方指为整套「体系」<span class="annot" data-pop="q-systeme">⁠<sup>*</sup></span>⁠总指挥的人——「体系」一词并未被审判长 <em class="fr">Agi</em> 采纳——将被处以极重之刑。事实并非如此：她被判 3 年监禁、含 1 年电子监控形式的实刑，10 万欧元罚金，45 个月禁选、含 30 个月缓刑。而 2025 年 3 月 31 日的一审判决曾对这道补充刑附加即时执行：「对廉洁造成的损害，如今已然得到弥补」，法庭如此宣示<span class="annot" data-pop="q-cour5">⁠<sup>*</sup></span>⁠——因为她刚被判处的那 15 个月实执部分，恰好已经服满。</p>
+  <div class="annot-text" id="q-systeme">原文 <em class="fr">système</em>。此词在本案中含双重反讽：一方面，<strong>检方</strong>用它指控 FN 助理挪用是一套有组织的「系统／体系」，并称 <em class="fr">Le Pen</em> 为这套「体系」的「总指挥」（<em class="fr">la grande ordonnatrice du « système »</em>）——但审判长 <em class="fr">Agi</em> 并未采纳这一说法（<em class="fr">terme non repris à son compte</em>）；另一方面，<em class="fr">Le Pen</em> 本人正是以「反体系」（<em class="fr">contre le système</em>）、抨击「寡头统治」（<em class="fr">oligarchie</em>）立身，RN 全党即建立在「反体系」之上。同一个词，检方用以定她的罪、她用以标举自己，记者藉此点出这一张力。<span class="annot-tier">〔背景层 · 用词〕</span></div>
+  <div class="annot-text" id="q-cour5">原文：«&nbsp;L'atteinte à la probité est d'ores et déjà réparée&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.3 · 上诉法院合议庭</span></div>
+  <div class="annot-text" id="q-cour4">原文：«&nbsp;Le complice par instigation est plus dangereux que celui qui apporte aide et assistance&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.3 · 上诉法院合议庭</span></div>
+
+  <p>在下午两点零五分闭庭前，审判长说明了包括 RN(作为法人)在内的相关被告，须连带向民事一方欧洲议会赔付的方式：金额为 <span class="annot" data-pop="prejudice">194,3 万欧元⁠<sup>*</sup></span>⁠。</p>
+  <div class="annot-text" id="prejudice">赔偿与损失金额，两报口径略异，均按各报原文照录：《<em class="fr">Le Figaro</em>⁠》⁠(<em class="fr">Durand-Souffland</em>)记连带赔付欧洲议会 <em class="fr">1,943 million €</em>(即 194,3 万欧元)；《<em class="fr">Le Parisien</em>⁠》⁠(P.3，<em class="fr">Boutry</em>)记「须连带赔付议会 1,9 M€，另加 15 万欧元精神损失」，并将全案损失总额记为 2,8 M€(<em class="fr">Le Figaro</em> 另一处记「约 3 M€，已偿还约 1,1 M」)。差异源于两报对「已偿还部分／精神损失／本金」的计法不同，非事实冲突。<br><span style="font-size:12px;color:var(--gris);">（法式数字：逗号为小数点、空格为千位分隔——如「1,9 M€」＝190 万欧元；详见文末<a href="#num-note">「法语数字读法说明」</a>。）</span><span class="annot-tier">〔背景层 · 数值口径〕</span></div>
+
+  <p>这份裁决可以被解读为，是对那些指责「法官」整体上妨碍选民自由选择者的一记司法回应——但这只是一种解读。如此判处 <em class="fr">Marine Le Pen</em>，上诉法院并未阻止她参选。但这位「如今的候选人」若提起最高法院上诉，将冒很大风险：万一最高法院以形式理由撤销裁决(它不审实体<span class="annot" data-pop="q-fond">⁠<sup>*</sup></span>⁠)，案件须重审，而一审所判、附即时执行的五年禁选，据某些法学家的看法，可能使当事人无法递交候选申请。反之，若上诉被驳、裁决成为终局，届时数月已逝、电子手环开始执行，递交候选申请也就为时太晚。</p>
+  <div class="annot-text" id="q-fond">原文：«&nbsp;<em class="fr">elle n'examine pas le fond</em>&nbsp;»。这是最高法院（<em class="fr">Cour de cassation</em>）的根本特征：它<strong>只审查下级法院对法律的适用是否正确（droit），不重新审查案件的事实（<em class="fr">le fond</em> / 案情实体）</strong>。故它不是「第三审」——若认定有法律错误，它只撤销原裁决、把案件发回另一法院重审，而非自行改判事实。这正是本案上诉「悬念」的source：即便撤销，也不等于无罪，而是重新来过。<span class="annot-tier">〔背景层 · 法律〕</span></div>
+
+  <p>倘若 <em class="fr">Marine Le Pen</em> 接受被判挪用公款，她本可请求尽快戴上手环，并祈求惯常时限对她有所缩短，再设法争取减刑与刑罚调整——无论如何，这都能让她在 2027 年初大体无碍地竞选——据《<em class="fr">Le Figaro</em>》头版报道，判决使她得以出现在 <strong>4 月 18 日</strong>的起跑线上<span class="annot" data-pop="q-18avril">⁠<sup>*</sup></span>⁠。</p>
+  <div class="annot-text" id="q-18avril">原文：«&nbsp;la justice lui a offert l'opportunité d'être sur la ligne de départ le 18 avril prochain&nbsp;»<br><span style="font-size:12px;color:var(--gris);">《<em class="fr">Le Figaro</em>》P.2(Hélin)· 即下一届总统大选首轮投票日</span></div>
+
+  <p>还需看检方总署(<em class="fr">parquet général</em>)的态度：检方的量刑要求整体上被法庭明显驳回——尤其是它曾要求确认五年禁选——因此检方同样提起上诉并非没有可能。检方会认为此举合宜吗？它有十天时间作出决定<span class="annot" data-pop="q-dixjours">⁠<sup>*</sup></span>⁠。</p>
+  <div class="annot-text" id="q-dixjours">原文：«&nbsp;<em class="fr">Il a dix jours pour prendre sa décision</em>&nbsp;»。此处「它」指<strong>检方总署</strong>：这「十天」是法国《刑事诉讼法》第 568 条规定的<strong>提起最高法院上诉的法定期限</strong>（<em class="fr">dix jours francs</em>，即十个整日，不计判决当日与末日）。该期限<strong>对被告与检方均适用</strong>：本案判决于 7 月 7 日宣告，十日期限<strong>至 7 月 20 日届满</strong>。故检方总署须在此期限内决定是否也就本案上诉——巴黎上诉法院总检察长 <em class="fr">Marie-Suzanne Le Quéau</em> 已于 7 月 7 日晚表示将「下周」宣布是否上诉。（附注：<em class="fr">dix jours</em> 为 2023 年 11 月 20 日法律修订后的现行期限，此前为五日。）<br><span style="font-size:12px;color:var(--gris);">source：《刑事诉讼法》第 568 条（2023 年 11 月 20 日法律修订，<em class="fr">Légifrance</em>）；「至 7 月 20 日」及检方表态据 <em class="fr">France 24</em>、<em class="fr">franceinfo</em> 2026-7-7／08 报道</span><span class="annot-tier">〔背景层 · 法律〕</span></div>
+  <div class="srcfoot">本节译自《<em class="fr">Le Figaro</em>⁠》⁠· 2026 年 7 月 8 日 · N° 25 461 · P.3 · 署名 <em class="fr">Stéphane Durand-Souffland</em>⁠。</div>
+</section>
+
+<!-- ========================= 3. 上诉悬念 ========================= -->
+<section class="story" id="cassation">
+  <div class="rubrique lp">LE PARISIEN · DÉCISION · CASSATION · P.3 · N° 25 465(8 juillet)</div>
+  <h1 class="titre">上诉悬念：一次上诉，诸多疑问</h1>
+  <p class="titre-fr">Un pourvoi, beaucoup de questions · par <em class="fr">T. B.</em></p>
+  <p class="editor-link"><strong>编者导引</strong>：本章为《<em class="fr">Le Parisien</em>》就同一场上诉所作的报道，与上一章《司法解剖》（《<em class="fr">Le Figaro</em>》）互为另一视角——前章侧重裁决的量刑逻辑与「得不偿失」的上诉风险，本章则聚焦最高法院上诉的中止效力与由此而来的程序悬念，二者可对照阅读。</p>
+  <p class="chapo"><em class="fr">Marine Le Pen</em> 案，或许有朝一日会进入法学院的课程。周二晚在 TF1，她宣布将就上诉法院的裁决提起最高法院上诉。这不是就实体重审，而是核查法官是否正确适用了法律。</p>
+
+  <p>包括 <em class="fr">Marine Le Pen</em> 在内的多名被告认为，惩治挪用公款的刑法第 432-15 条不适用于本案。他们的律师主张，欧洲议员并非「负有公共服务职责」之人，欧洲经费也不能被视作公共资金。</p>
+
+  <p>然而，这些论点在一审已被提出并驳回，这次又被上诉法院驳回——法庭为此作了一番极为深入的法律分析，在<a href="https://www.cours-appel.justice.fr/sites/default/files/2026-07/20260707%20-%20CA%20Paris%20-%20CP.pdf" target="_blank" rel="noopener">裁决书</a> <span class="annot lp" data-pop="pages">341 页中占了 11 页⁠<sup>*</sup></span>⁠。「不认同」这一推理的 <em class="fr">Marine Le Pen</em>，打算把这一点提交给最高审判机关。</p>
+  <div class="annot-text" id="pages">裁决书共 341 页，其中专门论证「刑法第 432-15 条是否适用于欧洲议员」的部分即达 11 页——这一比重本身，透露出该法律争点在本案中的分量，也是 <em class="fr">Le Pen</em> 上诉所锁定的核心。<br><strong>数字说明</strong>：「341 页」及「11 页」为《<em class="fr">Le Parisien</em>》记者查阅裁决书后所述；巴黎上诉法院官方<strong>新闻公报</strong>则记裁决书为 <strong>339 页</strong>，未单列该争点所占页数。可点击正文「裁决书」查看官方公报（含定罪与量刑的官方论证结论；339 页裁决书全文未公开）。<br><span style="font-size:12px;color:var(--gris);">source：据《<em class="fr">Le Parisien</em>》2026-7-8 P.3「CASSATION」（<em class="fr">T. B.</em>）</span><span class="annot-tier">〔背景层 · 文本事实〕</span></div>
+
+  <p>接下来要厘清的，是这次上诉的后果。就其性质而言，它具有中止效力<span class="annot lp" data-pop="q-suspensif">⁠<sup>*</sup></span>⁠。理论上，它因此让上诉法院的裁决暂停、推迟戴电子手环的期限——这就给已凭本周二裁决卸下禁选障碍的 <em class="fr">Marine Le Pen</em> 松了一口气。</p>
+  <div class="annot-text" id="q-suspensif">原文：«&nbsp;<em class="fr">Par nature, il est suspensif</em>&nbsp;»。「中止效力」（<em class="fr">effet suspensif</em>）指：在刑事案件中，<strong>被告方提起的最高法院上诉，会暂停原判决的执行，直到最高法院作出裁决</strong>（《刑事诉讼法》第 569 条）。这正是 <em class="fr">Le Pen</em> 上诉所指望的——借上诉暂停执行、推迟戴电子手环。<br><strong>但关键例外</strong>：附「即时执行」（<em class="fr">exécution provisoire</em>）的刑罚不受中止、继续生效。一审那道禁选刑当初正附了即时执行，故它是否会因上诉而「复活」，成为本案最专门的法律争点（即本章下文所述「其实并未真正厘清」）。<br><strong>1993 年判例之争</strong>：这一争点的核心，是最高法院一则旧判例——<a href="https://www.legifrance.gouv.fr/juri/id/JURITEXT000007066642/" target="_blank" rel="noopener"><em class="fr">Cass. crim., 28 sept. 1993, n° 92-85.473</em></a>。该判例认为：当上诉法院改判、未保留即时执行时，一审附即时执行的刑罚在整个上诉期间仍持续有效（直到最高法院裁决）。<strong>支持者</strong>据此主张：Le Pen 上诉反而会让一审那道更重的<strong>五年禁选即时执行「复活」</strong>。<strong>反对者</strong>（多位法学家）则指出：① 1993 判例针对的是「缓刑考验期」（<em class="fr">sursis probatoire</em>），性质与禁选刑不同，未必可套用；② 本案一审那道禁选的即时执行部分（15 个月）<strong>已执行完毕</strong>，无从「复活」；③ 上诉法院是经比例性审查明确减刑的，让旧刑复活将架空上诉判决。另有折中观点认为：一审即时执行仅在最高法院<strong>真正撤销</strong>上诉判决时才恢复，上诉审理期间与十日期限内均不恢复。此点至今未有定论。<br><span style="font-size:12px;color:var(--gris);">source：原文《<em class="fr">Le Parisien</em>》2026-7-8 P.3「CASSATION」（<em class="fr">T. B.</em>）；法律依据据《刑事诉讼法》第 569 条（Légifrance）；1993 判例见 <em class="fr">Cass. crim. 28 sept. 1993, n° 92-85.473</em>（<em class="fr">Légifrance</em>），正反观点据 <em class="fr">Public Sénat</em>、律师析评（<em class="fr">simonnetavocat.fr</em>）2026-7 报道</span><span class="annot-tier">〔背景层 · 法律〕</span></div>
+
+  <h2 class="intertitre">中止效力，其实并未真正厘清</h2>
+  <p>然而事情没那么简单，一场极为专门的争论在法学界发酵。有人认为，一审所判、附即时执行的五年禁选，会因上诉而重新变得可执行。「他们错了」，<em class="fr">Marine Le Pen</em> 在 TF1 上信心十足地宣称。<span class="annot lp" data-pop="q-setrompent">⁠<sup>*</sup></span>⁠「从逻辑上说，一审判决不再适用，但一些孤立的判例让这一点存疑。这并未真正厘清」，一位司法官如此判断。<span class="annot lp" data-pop="q-magistrat">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-magistrat">原文：«&nbsp;Logiquement, le jugement de première instance n'est plus applicable mais des jurisprudences isolées laissent planer le doute. Ce n'est pas réellement tranché&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.3 · 一位司法官</span></div>
+  <div class="annot-text" id="q-setrompent">原文：«&nbsp;Ils se trompent&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.3 · <em class="fr">Marine Le Pen</em>，TF1</span></div>
+
+  <p>最后，若上诉被驳(此为统计上最可能的情形)又当如何？「到时再看」，这位届时将面临手环威胁的人如此搁置。<span class="annot lp" data-pop="q-verrons">⁠<sup>*</sup></span>⁠最高法院曾宣布，它会在年底前作出裁决，以免扰乱选举进程。也有声音指出，被告或能找到拖延时间的办法<span class="annot lp" data-pop="q-montre">⁠<sup>*</sup></span>⁠……</p>
+  <div class="annot-text" id="q-montre">原文：«&nbsp;<em class="fr">les prévenus pourraient trouver les moyens de faire jouer la montre</em>&nbsp;»。<em class="fr">faire jouer la montre</em> 是法语习语，字面「让钟表走动」，意为<strong>故意拖延、打时间战</strong>（近似中文「拖字诀」「打时间差」）。此处指：即便最高法院有意加速裁决以免扰乱选举，被告方仍可能借程序手段拖延，使案件拖过关键的选举时间点。<br><span style="font-size:12px;color:var(--gris);">source：《<em class="fr">Le Parisien</em>》2026 年 7 月 8 日 P.3「CASSATION」（<em class="fr">T. B.</em>）</span><span class="annot-tier">〔背景层 · 用词〕</span></div>
+  <div class="annot-text" id="q-verrons">原文：«&nbsp;Nous verrons&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.3 · <em class="fr">Marine Le Pen</em></span></div>
+  <div class="srcfoot">本节译自《<em class="fr">Le Parisien</em>⁠》⁠· 2026 年 7 月 8 日 · N° 25 465 · P.3「CASSATION」· 署名 <em class="fr">T. B.</em>(<em class="fr">Timothée Boutry</em>⁠)· 原报此处配图，人物与场景：巴黎一区，本周二——<em class="fr">Le Pen</em> 的两位律师 <em class="fr">Bosselut</em>(左)与 <em class="fr">Chirac Kollarik</em>，为减轻的禁选刑而欣慰。</div>
+</section>
+
+<!-- ========================= 4. Bardella 侧 ========================= -->
+<section class="story" id="bardella">
+  <div class="rubrique">LE FIGARO · POLITIQUE · P.4 · N° 25 461(8 juillet)</div>
+  <h1 class="titre">Bardella 侧：重披「未来总理」的行头</h1>
+  <p class="titre-fr">Jordan Bardella retrouve son costume de premier-ministrable · par <em class="fr">Paul Laubacher</em></p>
+  <p class="chapo">作为 <em class="fr">Marine Le Pen</em> 的心腹，这位国民联盟主席早已为「一旦她被挡下就接棒」做好准备。如今，接棒推迟了。</p>
+
+  <p><em class="fr">Jordan Bardella</em> 已不太分得清别人贴在他身上的各种标签。未来总理，还是未来总统？储君，还是猎手？「B 计划」，还是「A 计划」？说到底，无所谓：即将开始的这场竞选对他而言无论如何都是前所未有的。周二，RN 主席在党部——巴黎十六区 rue Cortambert 的新址——旁观了他的「主帅」在助理案中被上诉法院定罪。刑罚较一审为轻，几乎是为 <em class="fr">Marine Le Pen</em> 量身裁剪：法官决定不真正阻止她参选，把亲口宣布的机会留给这位「三度参选、两度闯入次轮」的人，让她在 TF1 的「20 点新闻」上自己揭晓决定。于是 <em class="fr">Marine Le Pen</em> 终究成了 2027 年的候选人，尽管她给自己加挂了一场结局难料的最高法院上诉。</p>
+
+  <p><em class="fr">Jordan Bardella</em> 本已为相反的剧本做足准备——那个他不得不接过 <em class="fr">Marine Le Pen</em> 火炬的剧本。他身边的人甚至放话，说以一审判决和检方在上诉中的量刑要求来看，这才是最可能的情形。等待他的那份眩晕的征兆？年仅 30 岁的他，在投票意向民调里做得比导师更好——他的得分甚至高过他的年龄，第一轮以 <span class="annot" data-pop="sondage3237">32% 至 37%⁠<sup>*</sup></span>⁠ 的意向大幅领先。但 <em class="fr">Jordan Bardella</em> 本该记得，7 月 7 日这个日子对他并不吉利：2024 年，从他手中溜走的是马提尼翁；2026 年，他无法竞逐的是爱丽舍。<span class="annot" data-pop="q-vertige">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-vertige">原文：«&nbsp;Signe du vertige qui l'attendait ? À seulement 30 ans, il faisait mieux que son mentor dans les sondages d'intentions de vote, où ses scores étaient plus élevés que son âge, puisqu'il était donné largement en tête du premier tour, avec 32 % à 37 % des voix. Mais Jordan Bardella aurait dû se souvenir que la date du 7 juillet ne lui porte pas chance. En 2024, c'est Matignon qui lui avait échappé. En 2026, c'est l'Élysée qu'il ne pourra pas briguer.&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.4(<em class="fr">Laubacher</em>)· 全段原文</span></div>
+  <div class="annot-text" id="sondage3237">指第一轮投票意向。多份民调此前给 <em class="fr">Bardella</em> 的得分(32%–37%)高于 <em class="fr">Le Pen</em> 本人——记者点出这一反差：正因如此，「换 <em class="fr">Bardella</em> 出线」一度被视为对 RN 更有利的剧本。<span class="annot-tier">〔背景层 · 民调〕</span></div>
+
+  <p>于是从周二晚起，<em class="fr">Jordan Bardella</em> 重新披上了 <em class="fr">Marine Le Pen</em> 未来总理的行头——他在政治上的一切都归功于她。在等待这对搭档的竞选里，他大概会不厌其烦地重复上周六在 Liévin 那片 <em class="fr">mariniste</em><span class="annot" data-pop="q-mariniste">⁠<sup>*</sup></span>⁠色彩浓厚的腹地、对党员们说过的那番对「主帅」的话：「我要再次向她表达我全部的支持、全部的友谊，再说一遍——我为她投身政治，是为了看到她当选共和国总统。而我很希望，几个月后就能看到她当选。」<span class="annot" data-pop="q-bard-lievin">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-bard-lievin">原文：«&nbsp;Je veux lui redire mon total soutien, ma totale amitié, lui redire que je me suis engagé pour elle en politique, pour la voir élue présidente de la République. Et j'espère bien la voir élue présidente de la République dans quelques mois&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.4 · <em class="fr">Jordan Bardella</em>，上周六 Liévin</span></div>
+  <div class="annot-text" id="q-mariniste">原文 <em class="fr">mariniste</em> 为形容词，源自 <em class="fr">Marine Le Pen</em> 之名，指国民阵线内忠于她本人的派系与路线，与源自 <em class="fr">Jordan Bardella</em> 的 <em class="fr">bardelliste</em> 一系相对。此处 <em class="fr">cette fédération si mariniste</em> 即形容 Liévin 所在联合会「亲 <em class="fr">Marine Le Pen</em>」色彩浓厚。<span class="annot-tier">〔背景层 · 用词〕</span></div>
+
+  <p>说到底，<em class="fr">Jordan Bardella</em> 其实为接下来的几个月想了很多，甚至设想过宣布参选的形式与内容，还打算出第三本书为竞选造势、在书里揭晓一项将支撑其候选的经济重磅措施。可是，30 岁，在这样的处境下还得再等一等才投身爱丽舍之争——这难道不是一种运气？</p>
+
+  <p>至于 <em class="fr">Marine Le Pen</em>，如果她最终需要 <em class="fr">Jordan Bardella</em> 待在她为他设想的位置上——也就是马提尼翁，肩负把 RN 的多数向共和党右翼敞开的使命——她近来逢人便说，若参选受阻，她会是自己「爱徒」的「第一支持者」。对这个高个、褐发、瘦削而略显佝偻的年轻人来说，这已是一种胜利：2018 年 11 月他 23 岁时，没人会想到他会成为 <em class="fr">Marine Le Pen</em> 的心腹、成为她所有使命的执行者。</p>
+
+  <h2 class="intertitre">「年纪太轻」之诉</h2>
+  <p>但他真的有过证明自己的时间吗？数月来，「拿年纪说事」(<span class="annot lp" data-pop="jeunisme">procès en jeunisme⁠<sup>*</sup></span>⁠)给了对手大量把柄。「我 31 岁时还没准备好当共和国总统。我 46 岁了也还没准备好……你不可能只靠在 TikTok 上发两条视频和穿几套合身的西装就当上总统」，<em class="fr">Édouard Philippe</em> 的一位亲信这样攻击他。<span class="annot lp" data-pop="q-jeunisme1">⁠<sup>*</sup></span>⁠<em class="fr">Retailleau</em> 阵营的另一人则指他「没有时间的包浆」。<span class="annot lp" data-pop="q-patine">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-patine">原文：«&nbsp;n'a pas la patine du temps&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.4 · <em class="fr">Retailleau</em> 阵营一人</span></div>
+  <div class="annot-text" id="q-jeunisme1">原文：«&nbsp;Moi, à 31 ans, je n'étais pas prêt à être président de la République. Et je ne le suis toujours pas à 46… On ne s'improvise pas président avec deux publications sur TikTok et des costumes cintrés&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.4 · <em class="fr">Édouard Philippe</em> 一位亲信</span></div>
+  <div class="annot-text" id="jeunisme">法语 <em class="fr">procès en jeunisme</em> 字面为「一场以『年轻主义』为由的审判」，此处指对手反复以 <em class="fr">Bardella</em> 「太年轻、资历浅」为由质疑其参选资格的攻势。<em class="fr">Le Pen</em> 斥之为一段「反复弹唱的小调门」。<span class="annot-tier">〔背景层 · 政治话语〕</span></div>
+
+  <p>一段「反复弹唱的小调门」，<em class="fr">Marine Le Pen</em> 对此恼火。在小圈子里，这位「母狼」为她的「爱徒」与「搭档」辩护、把怒气顶了上来：「他做过的竞选，比现在任何一个参选的人都多！<em class="fr">Édouard Philippe</em>，除了市镇选举，他也没做过多少！而 <em class="fr">Jordan</em> 领导的是法国第一大党！」<span class="annot lp" data-pop="q-merelouve">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-merelouve">原文：«&nbsp;Il a quand même fait plus de campagnes que n'importe lequel de ceux qui se présentent ! Édouard Philippe, à part les campagnes municipales, il n'en a pas fait des masses ! Et Jordan dirige le premier parti de France !&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.4 · <em class="fr">Marine Le Pen</em>，小范围</span></div>
+
+  <p>这并不妨碍她私下低声担忧：当你是一个反精英政党的候选人时，<em class="fr">Bardella</em> 有过分融入「体系」的风险——尤其当他携女伴 <em class="fr">Maria Carolina de Bourbon des Deux-Siciles</em> 现身摩纳哥之际。<span class="annot lp" data-pop="q-maria">⁠<sup>*</sup></span>⁠「有那么一周我是空壳，有那么一周我很危险，有那么一周我是富人和游艇的总统……」，RN 主席近来被这些批评气得发噎。<span class="annot lp" data-pop="q-yachts">⁠<sup>*</sup></span>⁠但无论如何，数周以来，这位三十来岁的人对「由他为党扛起爱丽舍之战的大旗」已不再遮掩——他将是 <em class="fr">Le Pen</em> 家族之外的第一人。到头来，2027 年的候选人还是一位 <em class="fr">Le Pen</em>；若获胜，<em class="fr">Bardella</em> 去马提尼翁。</p>
+  <div class="annot-text" id="q-maria"><em class="fr">Maria Carolina de Bourbon des Deux-Siciles</em>，两西西里波旁王朝后裔、贵族头衔持有者，<em class="fr">Bardella</em> 的伴侣。二人同游摩纳哥的照片被对手用来质疑他「过分融入上流／体制」。<span class="annot-tier">〔背景层 · 人物〕</span></div>
+  <div class="annot-text" id="q-yachts">原文：«&nbsp;Une semaine, je serais une coquille vide, une semaine, je serais dangereux, une semaine, le président des riches et des yachts…&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.4 · <em class="fr">Jordan Bardella</em></span></div>
+
+  <h2 class="intertitre">「右翼的 ethos」</h2>
+  <p>不过，RN 主席一路上也留下了一些线索。出身塞纳-圣但尼一个清寒之家——他母亲常说「保守派？那是酸奶里才有的东西」<span class="annot" data-pop="q-yaourts">⁠<sup>*</sup></span>⁠——如今他却自称有一种「右翼的 ethos」<span class="annot" data-pop="q-ethos">⁠<sup>*</sup></span>⁠，并在第一本书里写道：要赢下总统大选，须重建「资产阶级」与「平民阶层」的联盟。这是对 2007 年 <em class="fr">Nicolas Sarkozy</em> 竞选——迄今最后一位出身右翼的共和国总统——毫不掩饰的援引。这一靠拢将在 RN 主席与这位前国家元首的一顿午餐中成形，席终 <em class="fr">Sarkozy</em> 对他说，他「让人想起希拉克时代的 RPR」<span class="annot" data-pop="q-rpr-concept">⁠<sup>*</sup></span>⁠。<span class="annot" data-pop="q-rpr">⁠<sup>*</sup></span>⁠也难怪：从不自称民粹主义者的他，想做「理性右翼」的新英雄，甚至声称 2027 年 RN 能「同时」体现断裂与稳定——对一个以「反体系」立身的政党而言，这是个不小的赌注。</p>
+  <div class="annot-text" id="q-rpr-concept">RPR(<em class="fr">Rassemblement pour la République</em>，保卫共和联盟)是 <em class="fr">Jacques Chirac</em> 1976 年创立的中右翼戴高乐派政党，2002 年并入 UMP(今共和党前身)。<em class="fr">Sarkozy</em> 此语意在把 <em class="fr">Bardella</em> 比作传统主流右翼、而非极右——是一种拉拢与「去妖魔化」的表态。<span class="annot-tier">〔背景层 · 政党史〕</span></div>
+  <div class="annot-text" id="q-ethos"><em class="fr">ethos</em>(源自希腊语)指一个人或群体的品格气质、价值取向与行事作风。「右翼的 ethos」即自认在气质与价值上属于(传统)右翼，而非仅在政策立场上。<span class="annot-tier">〔背景层 · 用词〕</span></div>
+  <div class="annot-text" id="q-rpr">原文：«&nbsp;fait penser au RPR du temps de Chirac&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.4 · <em class="fr">Nicolas Sarkozy</em></span></div>
+  <div class="annot-text" id="q-yaourts">原文：«&nbsp;les conservateurs, c'est ce qu'il y a dans les yaourts&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.4 · 引 <em class="fr">Bardella</em> 之母旧语</span></div>
+
+  <p>数月、甚至数年来，<em class="fr">Jordan Bardella</em> 一直盘算着 RN 的一场「自由主义革命」。他不是正让新任特别顾问 <em class="fr">François Durvye</em>——自由派亿万富翁、税务流亡者 <em class="fr">Pierre-Édouard Stérin</em> 的前副手——去琢磨新一轮退休制度改革吗？他还发起了一场向淹没法国经济的繁文缛节宣战的「远征」。去年九月，他休假归来带着一个问题：能否干脆彻底取消个人所得税？<em class="fr">Marine Le Pen</em> 的顾问们瞪大了眼——生怕万一由他做候选人，得去替这么一项措施辩护。这一情形不会发生了。但这不妨碍 <em class="fr">Jordan Bardella</em> 常引萨科齐主义的一句格言：靠收缩自己是赢不了的。因此，与 <em class="fr">Marine Le Pen</em> 不同，他打算继续拒绝「不左不右」，坦然去右翼的地盘上「打猎」。而这一次，是为了他的候选人 <em class="fr">Marine Le Pen</em> 的荣光。</p>
+
+  <blockquote class="lead lp">
+    <p class="zh">「要成为国家之人，须先成为时代之人。我相信我是。」</p>
+    <p class="fr">«&nbsp;Pour être l'homme de son pays, il faut être l'homme de son temps. […] Je crois en être.&nbsp;»</p>
+    <p class="src"><em class="fr">Jordan Bardella</em>(引 <em class="fr">Chateaubriand</em>⁠)· 据《<em class="fr">Le Parisien</em>⁠》⁠P.4</p>
+  </blockquote>
+  <div class="figaro-poll"><div class="fp-head">FIGARO OUI — FIGARO NON</div><div class="fp-q"><strong>周二提问的读者投票结果：</strong>您认为 Le Pen–Bardella 这个「二人组」（<em class="fr">tandem</em>）在司法裁决之后还能继续运作吗？</div><div class="fp-qfr">Réponses à la question de mardi : Pensez-vous que le «&nbsp;tandem&nbsp;» Le Pen-Bardella fonctionnera encore après la décision de justice ?</div><div class="fp-bars"><div class="fp-oui" style="flex:69"><span class="fp-lbl">OUI</span><span class="fp-pct">69&nbsp;%</span></div><div class="fp-non" style="flex:31"><span class="fp-lbl">NON</span><span class="fp-pct">31&nbsp;%</span></div></div><div class="fp-votants">投票人数（<em class="fr">VOTANTS</em>）：71&nbsp;883</div><span class="fp-src">source：《<em class="fr">Le Figaro</em>》2026 年 7 月 8 日头版读者调查框（<em class="fr">N° 25 461</em>）。此为该报网站／App 的非科学性读者自愿投票，不代表民意调查。</span></div>
+  <div class="srcfoot">本节译自《<em class="fr">Le Figaro</em>⁠》⁠· 2026 年 7 月 8 日 · N° 25 461 · P.4 · 署名 <em class="fr">Paul Laubacher</em>⁠；「年纪之诉」与 <em class="fr">Chateaubriand</em> 引另参《<em class="fr">Le Parisien</em>⁠》⁠同日 P.4「Le premier jour du reste de sa vie」(<em class="fr">Alexandre Sulzer</em>、<em class="fr">Quentin Laurent</em> 等)。</div>
+</section>
+
+<!-- ========================= 5. 政治涟漪 ========================= -->
+<section class="story" id="adversaires">
+  <div class="rubrique lp">LE PARISIEN · ADVERSAIRES · P.5 · N° 25 465(8 juillet)</div>
+  <h1 class="titre">政治涟漪：对手、基层，与远在大马士革的爱丽舍主人</h1>
+  <p class="titre-fr">Attal et Philippe cherchent la parade · par <em class="fr">Thomas Soulié</em>、<em class="fr">Alison Tassin</em>(avec O.B. et M.W.)</p>
+  <p class="chapo">对中间阵营的两位候选人而言，「她参选」是 2027 年最糟的剧本。判决当晚，两人一前一后走上电视，各自寻找应对之道。</p>
+
+  <p>在自己的办公室里，目光钉在电视上，这个周二下午，一位女部长一边在办公室盯着电视上对 <em class="fr">Marine Le Pen</em> 的判决直播，一边笃定地预判：「我看不出她怎么会不参选。」<span class="annot lp" data-pop="q-min1">⁠<sup>*</sup></span>⁠「这个判决很精，」她的一位政府同僚也评价，「因为它并不妨碍她。她要对法国人说自己拒绝参选，会很难。」<span class="annot lp" data-pop="q-min2">⁠<sup>*</sup></span>⁠几小时后，在 TF1 上，<em class="fr">Marine Le Pen</em> 印证了这一直觉。</p>
+  <div class="annot-text" id="q-min2">原文：«&nbsp;La décision est maligne […] car ça ne l'entrave pas. Ça va être compliqué pour elle de dire aux Français qu'elle refuse de l'être&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.5 · 一位政府同僚</span></div>
+  <div class="annot-text" id="q-min1">原文：«&nbsp;Je ne vois pas comment elle n'est pas candidate&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.5 · 一位女部长</span></div>
+
+  <blockquote class="lead lp">
+    <p class="zh">「这是那个死里逃生的人，是圣女贞德……但是在火刑之后。」</p>
+    <p class="fr">«&nbsp;C'est la miraculée, c'est Jeanne d'Arc… mais après le bûcher.&nbsp;»</p>
+    <p class="src">一位 <em class="fr">Renaissance</em> 骨干 · 据《<em class="fr">Le Parisien</em>⁠》⁠P.5</p>
+  </blockquote>
+
+  <p>「她参选」，正是中间阵营大佬们最坏的剧本——他们一致认为她准备充分、对 2027 极具威胁。「可畏」「碰不得」「打不败」：数月来，总统阵营的当选者们私下里就这样形容她；与之相对的，是比她小二十七岁、经验更浅的 <em class="fr">Jordan Bardella</em>。</p>
+
+  <h2 class="intertitre">周二，全都上电视</h2>
+  <p>但在镜头前，中间阵营的两位候选人都不打算示弱。就在 <em class="fr">Marine Le Pen</em> 周二晚于 TF1 宣布之后，<em class="fr">Gabriel Attal</em> 紧接着上了同一家电视台，而 <em class="fr">Édouard Philippe</em> 也趁热回应、只是换到了 France 2。两人早已打算在判决后迅速反击，以免把战场让给国民联盟的候选人——不论那是谁！</p>
+
+  <p>秉持各自的性格，两位前总理押上了两种不同的打法。<em class="fr">Renaissance</em> 的掌门正面进攻他的 RN 对手——「我属于一个新的政治世代，对这一代人而言，表率、廉洁大概是最重要的价值。在被定罪的情况下仍参选，这其中确实存在道德维度的考量」——<span class="annot lp" data-pop="q-attal1">⁠<sup>*</sup></span>⁠而他的 <em class="fr">Horizons</em> 同行则承认她有参选的「权利」：「由法国人来裁决」，随即又痛斥这位 RN 议员团主席的「又一次背弃」。<span class="annot lp" data-pop="q-phil2">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-phil2">原文：«&nbsp;Ce sont les Français qui trancheront&nbsp;»；「又一次背弃」原文 «&nbsp;nouveau reniement&nbsp;» de la patronne des députés RN<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.5 · <em class="fr">Édouard Philippe</em>，France 2</span></div>
+  <div class="annot-text" id="q-attal1">原文：«&nbsp;J'appartiens à une nouvelle génération politique pour qui l'exemplarité, la probité sont probablement les valeurs les plus importantes. Il y a une dimension morale à se présenter alors même qu'on a été condamné&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.5 · <em class="fr">Gabriel Attal</em>，TF1</span></div>
+
+  <p>较量开场了。「她给了我们一个绝妙的抓手，去把旧体系和新世代摆上舞台对照」，<em class="fr">Attal</em> 的一位亲信自得地说<span class="annot lp" data-pop="q-attal3">⁠<sup>*</sup></span>⁠，还讥讽起 <em class="fr">Marine Le Pen</em> 新网站的副标题——「la Renaissance(复兴／重生)」！</p>
+  <div class="annot-text" id="q-attal3">原文：«&nbsp;Elle nous offre une prise incroyable pour mettre en scène le vieux système et la nouvelle génération&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.5 · <em class="fr">Attal</em> 一位亲信</span></div>
+
+  <h2 class="intertitre">一段巨大的落差</h2>
+  <p>幕后，一位部长下了更为尖刻的判断：「这个判决其实制造了两具尸体：<em class="fr">Bardella</em> 和 <em class="fr">Attal</em>。在这场对决里，年轻这张牌对 <em class="fr">Gabriel</em> 会明显变成负担。而她打的是一根他完全体现不出来的社会情感的弦。他既不『社会』，也不『年长』。」<span class="annot lp" data-pop="q-2morts">⁠<sup>*</sup></span>⁠但无论站上起跑线的是三十来岁的 <em class="fr">Attal</em>、还是五十来岁的 <em class="fr">Philippe</em>，据民调，两人(就目前而言)都追不回第一轮 <span class="annot lp" data-pop="ecart20">二十个百分点的落差⁠<sup>*</sup></span>⁠。既然主要对手已两度被判有罪，民调会否松动？「被判有罪，会让法国人震惊吗？不，我不这么认为」，<em class="fr">Attal</em> 政党的一位骨干无奈地断言。<span class="annot lp" data-pop="q-choque">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-choque">原文：«&nbsp;Être condamnée, est-ce que cela choque les Français ? Non, je ne crois pas&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.5 · <em class="fr">Attal</em> 政党一名骨干</span></div>
+  <div class="annot-text" id="q-2morts">原文：«&nbsp;Cette décision fait en réalité deux morts : Bardella et Attal. Dans ce combat, la carte jeune pour Gabriel va clairement être un handicap. Et elle joue sur une fibre sociale que lui n'incarne pas du tout. Il n'est ni social ni âgé&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.5 · 一位部长，幕后</span></div>
+  <div class="annot-text" id="ecart20">指第一轮投票意向中，中间阵营两位候选人(<em class="fr">Attal</em> / <em class="fr">Philippe</em>)与 RN 候选人之间约二十个百分点的差距。原报以此点出：无论谁代表中间阵营出战，眼下都难以逾越这道鸿沟。<span class="annot-tier">〔背景层 · 民调〕</span></div>
+
+  <p>这个周二，正在叙利亚大马士革出访的 <em class="fr">Emmanuel Macron</em> 一直盯着手机，读着幕僚发来的快讯与信息。但在记者面前，这位国家元首坚持置身于国内政治纷争之外：「共和国总统不评论司法裁决」，他重申。<span class="annot lp" data-pop="q-macron">⁠<sup>*</sup></span>⁠可若在十个月后，很可能得把爱丽舍的钥匙交到她手上——这对他而言，仍是一场噩梦。</p>
+
+  <h2 class="intertitre">左翼：措辞最不留情</h2>
+  <p>在各方因判决"读法"含混而普遍克制之际，唯有左翼即刻开火、且措辞最重。社会党人 <em class="fr">Boris Vallaud</em> 径直把 <em class="fr">Marine Le Pen</em> 比作一名「罪犯」<span class="annot" data-pop="q-vallaud">⁠<sup>*</sup></span>⁠。<em class="fr">Marine Tondelier</em> 认为「一个人被这样定罪之后，实在没法体面地去参选」<span class="annot" data-pop="q-tondelier">⁠<sup>*</sup></span>⁠，并同样惋惜她还能保住本选区的议员席位。<em class="fr">Jean-Luc Mélenchon</em> 则借一句克里奥尔谚语在 X 上回应：「『同样的毛，同样的畜生』，反之亦然。把他们统统赶走！」<span class="annot" data-pop="q-melenchon">⁠<sup>*</sup></span>⁠</p>
+  
+  <div class="annot-text" id="q-vallaud">原文：«&nbsp;Boris Vallaud a […] comparé Marine Le Pen à une « délinquante »&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.3(Hélin)· <em class="fr">Boris Vallaud</em>(PS)</span></div>
+  <div class="annot-text" id="q-tondelier">原文：«&nbsp;On ne peut pas décemment se présenter après avoir été ainsi condamnée&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.3(Hélin)· <em class="fr">Marine Tondelier</em></span></div>
+  <div class="annot-text" id="q-melenchon">原文：«&nbsp;"Même poil, même bête" et vice versa. Chassons-les tous !&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.3(Hélin)· <em class="fr">Jean-Luc Mélenchon</em>，X · 克里奥尔谚语</span></div>
+  <div class="annot-text" id="q-macron">原文：«&nbsp;Le président de la République ne commente pas les décisions de justice&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.5 · <em class="fr">Emmanuel Macron</em>，大马士革</span></div>
+
+  <h2 class="intertitre">在 Hénin-Beaumont，基层与议员抱成一团</h2>
+  <p>而在 <em class="fr">Le Pen</em> 的票仓 Hénin-Beaumont，判决没有动摇支持者。在她的吧台后，<em class="fr">Peggy</em> 从电视上得知消息。「<em class="fr">Marine Le Pen</em> 被判三年监禁、含一年电子手环实刑」，屏幕上写着。「太差劲了，」她恼火地说，「又不是只有她一个人挪用过钱，他们全都干过。可偏偏是她付出最重的代价。」<span class="annot lp" data-pop="q-peggy1">⁠<sup>*</sup></span>⁠但这位 Le Chanzy 酒吧的老板娘并不为大选担心：「什么都不会变。该做的我都会做：投 <em class="fr">Marine</em>，或者投 <em class="fr">Jordan</em>。我就希望，她要真去(竞选)，他们给她的手环配个好看的颜色。」<span class="annot lp" data-pop="q-peggy2">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-peggy2">原文：«&nbsp;Ça ne changera rien. Je ferai tout le nécessaire : voter pour Marine ou pour Jordan. J'espère juste qu'ils lui mettront une belle couleur à son bracelet si elle y va&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.4 侧栏 · <em class="fr">Peggy</em></span></div>
+  <div class="annot-text" id="q-peggy1">原文：«&nbsp;C'est nul […] Ce n'est pas la seule à avoir détourné de l'argent. Ils l'ont tous fait. Mais c'est elle qui paie le prix fort&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.4 侧栏 · <em class="fr">Peggy</em>，Hénin-Beaumont</span></div>
+
+  <p>「一种真正的羞辱」，在共和广场遇到的 <em class="fr">Catherine</em> 说，「这是一种针对。他们打 <em class="fr">Marine Le Pen</em>，可他们全是些捣鬼的人——从市长到参议员都是。」但对这位三十来岁的人而言，只有结果才算数，「案底不算」：「她，跟 <em class="fr">Steeve Briois</em>(Hénin-Beaumont 市长)一样，一直在为我们奔走。我离婚后差点无家可归，是 RN 给我找了住处，」她动情地说，「她想给法国人更多。这是常识。」<span class="annot lp" data-pop="q-catherine">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-catherine">原文：«&nbsp;C'est de l'acharnement. On frappe Marine Le Pen alors que ce sont tous des magouilleurs […] Elle, comme Steeve Briois, est toujours là pour nous. Après ma séparation, j'ai failli être SDF et le RN m'a trouvé un logement […] Elle veut donner davantage aux Français. C'est du bon sens&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.4 侧栏 · <em class="fr">Catherine</em>，共和广场</span></div>
+
+  <div class="encadre lp">
+    <div class="encadre-label">L'EXPERT · 一句民调佐证</div>
+    <h3>「围城心态」在这批选民中分量极重</h3>
+    <p>Ifop 民调专家 <em class="fr">Jérôme Fourquet</em> 在同期专访中，以春天 Perpignan 市镇选举为佐证：同案被判的 RN 现任市长 <em class="fr">Louis Aliot</em> 首轮即连任；投票前的调查显示，在「上诉维持定罪」的设想下，<span class="annot lp" data-pop="perpignan">78% 的 <em class="fr">Aliot</em> 潜在选民⁠<sup>*</sup></span>⁠表示这不会影响自己的选择，12% 表示会更倾向投他。「这种被围困的城堡的条件反射，在这批选民中分量极重。而 <em class="fr">Marine Le Pen</em> 大概正要在这上面做文章。」<span class="annot lp" data-pop="q-fourq-cit">⁠<sup>*</sup></span>⁠</p>
+  <div class="annot-text" id="q-fourq-cit">原文：«&nbsp;Ce réflexe de citadelle assiégée pèse très fort dans cet électorat. Et c'est là-dessus que Marine Le Pen va sans doute jouer&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.5 · <em class="fr">Jérôme Fourquet</em>(Ifop)</span></div>
+  </div>
+  <div class="annot-text" id="perpignan"><em class="fr">Fourquet</em> 引 2026 年春 Perpignan 市镇选举投票前的调查：面对「<em class="fr">Aliot</em> 上诉被维持定罪」的设想，其潜在选民中 78% 称不影响投票、12% 称会更倾向投他。他以此说明 RN 选民「受害者—围城」心态之顽固。<span class="annot-tier">〔事实层 · 已具名民调机构与场景〕</span></div>
+
+  <div class="srcfoot">本节译自《<em class="fr">Le Parisien</em>⁠》⁠· 2026 年 7 月 8 日 · N° 25 465 · P.5「ADVERSAIRES」(<em class="fr">Thomas Soulié</em>、<em class="fr">Alison Tassin</em>)· 基层走访取自同期 P.4 侧栏「Hénin-Beaumont fait bloc derrière sa députée」(<em class="fr">Mattias Bourgeois</em>⁠)· <em class="fr">Fourquet</em> 专访见本页第 8 节。</div>
+</section>
+
+
+
+<!-- ========================= 7. 评论 Schoettl(全文) ========================= -->
+<section class="story" id="schoettl">
+  <div class="rubrique">LE FIGARO · CHAMPS LIBRES · DÉBATS · P.16 · N° 25 461(8 juillet)</div>
+  <h1 class="titre">评论：RN 上诉审——政治生活刑事化的一个拐点？</h1>
+  <p class="titre-fr">Procès en appel du RN : vers un point d'inflexion dans la pénalisation de la vie politique ? · par <em class="fr">Jean-Éric Schoettl</em></p>
+  <p class="chapo">本周二，巴黎上诉法院在 FN 助理案中判处 <em class="fr">Marine Le Pen</em> 三年监禁、含一年电子手环实刑。这位宪法委员会前秘书长<span class="annot" data-pop="q-schoettl-bio">⁠<sup>*</sup></span>⁠分析：上诉法院给这位 RN 议员留下参选 2027 的可能，似乎是想避免作出一个对民主生活具有毁灭性后果的判决。</p>
+  <div class="annot-text" id="q-schoettl-bio"><em class="fr">Jean-Éric Schoettl</em>(1947— )，荣誉国务委员，1997–2007 年任<strong>宪法委员会秘书长</strong>(该机构的行政与法务负责人，非委员本人)。退休后活跃于公共法评论，著有《民主在法庭前的危险》(<em class="fr">La Démocratie au péril des prétoires</em>, Gallimard, 2022)。<strong>立场光谱</strong>：他属主权派／保守立场的公法学者，长期批评「法官治国」、宪法委员会与欧盟法对立法权和人民主权的侵蚀，撰稿刊物包括《Commentaire》、Atlantico、Front Populaire(Michel Onfray 主编的主权主义刊物)等。读本篇时宜将其论证放在这一立场背景下理解——即：它是一篇有鲜明观点的署名评论，而非中立的判决说明。<br><span style="font-size:12px;color:var(--gris);">source：<em class="fr">Wikipédia</em>「<em class="fr">Jean-Éric Schoettl</em>」；宪法委员会官网；Gallimard、Atlantico、Front Populaire 等署名信息</span><span class="annot-tier">〔背景层 · 作者立场〕</span></div>
+  
+
+  <p>FN 欧洲议员助理案中的司法惊变：2026 年 7 月 7 日，实现的恰是——以历来法庭对当选者侵害廉洁罪的判罚统计来看——先验上最不可能的那个剧本。巴黎上诉法院没有采纳其检方总署的量刑要求<span class="annot" data-pop="q-parquet">⁠<sup>*</sup></span>⁠，也与巴黎司法法院的立场显著拉开距离：<em class="fr">Marine Le Pen</em> 未被判丧失参加 2027 年总统大选的资格。</p>
+  <div class="annot-text" id="q-parquet">「检方总署」(<em class="fr">parquet général</em>)即上诉法院一级的<strong>公诉机关</strong>，由总检察长(<em class="fr">procureur général</em>)领导，代表社会一方出庭、提出量刑要求(<em class="fr">réquisitions</em>)。其要求对法院只是「意见」、不具约束力，法官可不采纳。此处即：上诉法院驳回了检方要求维持五年禁选的主张。<span class="annot-tier">〔背景层 · 司法机构〕</span></div>
+
+  <p>作为被认定的欧洲公款挪用主要组织者，<em class="fr">Marine Le Pen</em> 一审被判四年监禁(含两年缓刑)、10 万欧元罚金、五年禁选(附即时执行)。上诉中，检方总署对她提出的量刑在很大程度上维持一审：四年监禁(这一次含三年、而非两年缓刑)、10 万欧元罚金、五年禁选(但这一次不附即时执行)。7 月 7 日，上诉法院把禁选刑减为 45 个月(含 30 个月缓刑)、监禁刑减为 3 年、含 1 年实刑、可折抵为电子监控下的居家执行。那 15 个月的禁选实执部分，因一审法官 2025 年 3 月 31 日所下的即时执行，业已服满。</p>
+
+  <p>不过，在写下这些文字之时，<em class="fr">Marine Le Pen</em> 参选与否仍有若干不确定：当事人会接受脚踝戴着电子手环、背着居所义务去竞选吗？<span class="annot" data-pop="q-ddse">⁠<sup>*</sup></span>⁠她迄今排除这一点，但电子监控下的居家执行可被刑罚执行法官减去六个月——考虑到日程，这在本案中足以改变一切。其他不确定：她会就监禁刑提起最高法院上诉吗？被驳回的检方总署，自己会否也提起上诉<span class="annot" data-pop="q-deuxpourvois">⁠<sup>*</sup></span>⁠？</p>
+  <div class="annot-text" id="q-deuxpourvois">此处涉及<strong>两个不同主体、方向相反的可能上诉</strong>，宜分清：<br><strong>① <em class="fr">Le Pen</em> 的上诉（已确定）</strong>：她当晚即宣布提起，针对的是对她<strong>整个不利裁决</strong>——既包括定罪（她坚持第 432-15 条不适用于欧洲议员，即主张自己本不构成犯罪），也包括那道 1 年监禁（电子手环执行）。她的方向是<strong>推翻或减轻</strong>。<br><strong>② 检方总署的上诉（未定）</strong>：检方是<strong>对立的另一方</strong>，庭上曾要求维持更重的五年禁选，却被上诉法院驳回；若它也上诉，方向<strong>相反</strong>——是嫌判得太轻、想恢复更重的刑。<br>刑事诉讼中，控辩双方可各自独立就同一裁决上诉。故本案理论上可能出现「双方都上诉」的局面：她求轻、检方求重。检方须在十天内决定（见前注）。<br><span style="font-size:12px;color:var(--gris);">source：据《<em class="fr">Le Figaro</em>》2026-7-8 P.3（<em class="fr">Durand-Souffland</em>）、P.16（<em class="fr">Schoettl</em>）；上诉权依《刑事诉讼法》第 567、568 条（Légifrance）</span><span class="annot-tier">〔背景层 · 法律〕</span></div>
+  <div class="annot-text" id="q-ddse">此即法国的「居家电子监控」(<em class="fr">détention à domicile sous surveillance électronique</em>, DDSE)，一种在监狱之外执行的徒刑：受刑人须戴电子监控器——官方规定<strong>通常固定在脚踝</strong>(<em class="fr">à la cheville</em>)——并在法官指定的时段内留在住所，非经许可不得外出(即「居所义务」<em class="fr">obligations de résidence</em>)；外出仅限工作、就医、求职等。违反即触发警报，可撤销转为实际监禁。<br><span style="font-size:12px;color:var(--gris);">source：法国司法部 <em class="fr">Justice.fr</em>「量刑执行」；《刑事诉讼法》第 723-7 条及以下（Légifrance）</span><span class="annot-tier">〔背景层 · 法律〕</span></div>
+
+  <p>无论如何，上诉法院的裁决重新洗了这桩案子的牌。而超出本案之外，它甚至可能构成政治生活刑事化的一个拐点。是什么理由，可能把上诉法院推上这条路？</p>
+
+  <p>此处我们不去揣测上诉法官有什么政治盘算——比如出于 <em class="fr">Marine Le Pen</em> 与 <em class="fr">Jordan Bardella</em> 在 2027 年各自的选举优势。那既冒险又失当，何况另有一些丝毫不外于法官职责的考量，可能主导了他们的选择。</p>
+
+  <p>是哪些考量？FN(后改称 RN)把它欧洲议员的某些助理用作党的常职人员，被一审法官视为刑法第 432-15 条意义上的「挪用公款」。可这一定性是有争议的：依据惩罚性条款须从严解释的原则，能否认为第 432-15 条适用于一位当选者——鉴于它并未提及当选者，而刑法典在其关于「行使公共职能者违背廉洁义务」的部分(该条正在此部分中)，凡欲把当选者纳入某项罪行范围时，向来都明文写出？第 432-15 条适用于公共会计人员、「公共权力受托人」或「负有公共服务职责的人」。<span class="annot" data-pop="q-sch-432">⁠<sup>*</sup></span>⁠一位欧洲议员并不属于其中任何一种。<span class="annot" data-pop="q-depute-probite">⁠<sup>*</sup></span>⁠上诉法院即便不排除挪用公款，也可能对这一文本上的脆弱有所体察。</p>
+  <div class="annot-text" id="q-depute-probite">这是作者的核心法律论点：第 432-15 条只惩治「公共权力受托人、负公共服务职责者、公共会计人员」三类主体，而<strong>条文本身并未提及「当选者／议员」</strong>。作者认为，议员的职责是辩论、表决、监督、质询，属「制度性／主权性职能」，通常不掌握「公权力特权」(<em class="fr">prérogatives de puissance publique</em>)，故不当然落入该三类。<strong>但须并陈另一方立场</strong>：最高法院 2018 年 6 月 27 日判例(Cass. crim., n° 18-80.069)已明确认定「议员属负公共服务职责之人」，据此该条适用于议员——本案定罪即循此判例。两种解读的分歧，正是 <em class="fr">Le Pen</em> 上诉的法律核心。<br><span style="font-size:12px;color:var(--gris);">source：作者观点见其同题文（<em class="fr">Lexbase</em>，2025）；相反立场据最高法院刑事庭 2018-6-27 判例 <em class="fr">Cass. crim. n° 18-80.069</em></span><span class="annot-tier">〔分析层 · 法律争点〕</span></div>
+  <div class="annot-text" id="q-sch-432">原文：«&nbsp;L'article 432-15 s'applique aux comptables publics, aux « dépositaires de l'autorité publique » ou aux personnes « chargées d'une mission de service public »&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.16(Schoettl)</span></div>
+
+  <p>上诉法院或许也想表明：在政治责任人的廉洁问题上，司法并非受某种行业性的条件反射驱动。人们常说，在这一领域，判决一个接一个、彼此雷同，因为在对一位公共责任人的过错作出裁断时，法官往往抱团……上诉法院让这条通则失灵了。</p>
+
+  <p>上诉法院或许也不愿作出一个对法国民主生活具有毁灭性后果的判决。</p>
+  <blockquote class="lead">
+    <p class="zh">通过改变 2027 年总统大选的自然「选角」，上诉法院本会不仅决定 <em class="fr">Marine Le Pen</em>、<em class="fr">Jordan Bardella</em> 及其政党的前途，还决定我们政治的未来。</p>
+    <p class="fr">En altérant le casting naturel du scrutin présidentiel de 2027, la cour aurait décidé non seulement du devenir de Marine Le Pen, de Jordan Bardella et de leur parti, mais encore de notre futur politique.</p>
+    <p class="src">原报以加框大字呈现 · <em class="fr">Le Figaro</em> P.16</p>
+  </blockquote>
+  <p>人们由此掂量得出，在合议室里，三位司法官身上曾压着怎样的责任——他们凭着立法者留给其裁量的一个「游标」，就能塑定总统大选的面貌，进而左右国家的命运。</p>
+
+  <p>考虑到 <em class="fr">Marine Le Pen</em> 在国内政治生活中的分量——由民调、也由她作为最近两届总统大选次轮选手所取得的成绩为证——在所控事实的严重性与制裁后果之间的权衡，本须审慎地进行。刑罚的量度应始终与过错相称。在此，它还须顾及判决对选民在头号全国大选中自由选择的影响。在这些条件下，上诉法官或能自我克制，或至少保持一种「彼拉多式的审慎」(<span class="annot" data-pop="pilate">prudence de Pilate⁠<sup>*</sup></span>⁠)。许多司法官意识到司法形象的恶化：在同胞眼中，它既(就其传统使命而言)低效，又在政治—金融犯罪上奉行「双重标准」。在这桩标志性的案件、在近来一连串司法翻车的背景下，上诉法院或许有心表明：人民可以重新信任自己的司法。</p>
+  <div class="annot-text" id="pilate">「彼拉多式的审慎」典出《新约》：罗马总督 Ponce Pilate 在耶稣受审时「洗手」以示不担其责。作者以此形容法官在此案中一种既不激进介入、又谨慎自持的姿态。<span class="annot-tier">〔背景层 · 典故〕</span></div>
+
+  <p>上诉法院或许也想扭转四分之一世纪以来公共生活日益刑事化的趋势。刑事法官对政治阶层的严厉，以公共责任人须具表率为名。它主要(这是一个事实观察)触及右翼的当选者。难道要相信他们更不廉洁？这种严厉不仅来自法条，还来自法官适用法条的方式。</p>
+
+  <p>公共生活若在近三十年间被强烈刑事化，很大程度上是因为政治为法官的手臂装上了武器。然而，后者又把法律留给他的余地推到极限。那道被错称为「强制」或「自动」的禁选刑，正说明这一现象。它由 2016 年 12 月 9 日的 <span class="annot" data-pop="sapin2">Sapin II 法⁠<sup>*</sup></span>⁠确立，是在 <em class="fr">Cahuzac</em> 案后、政治阶层一场自虐式忏悔的大潮中通过的。政治阶层想借此表明，这一次，「那些丑闻」终结了。然而，没有任何规定强制法官判处那道「强制的」禁选补充刑。刑法典其实允许法官不判禁选——只要法官结合个案情形与犯罪人个性、为这一排除说明理由即可。但面对当选者，刑事法官几乎从不这样做。</p>
+  <div class="annot-text" id="sapin2">Sapin II 法(2016 年 12 月 9 日《关于透明、反腐败与经济生活现代化的法律》)在 <em class="fr">Cahuzac</em> 逃税丑闻后通过，把「侵害廉洁罪判处禁选补充刑」设为原则。作者指出：该刑常被称「自动」，实则法官仍有不判的裁量空间，只是对当选者几乎从不行使。<br><span style="font-size:12px;color:var(--gris);">source：2016 年 12 月 9 日 <em class="fr">Sapin II</em> 法（Légifrance）；《刑法典》第 131-26-2 条</span><span class="annot-tier">〔背景层 · 法律〕</span></div>
+
+  <p>在法律与法官之间，迄今谁对公共生活刑事化负更大责任？答案是：这是一个相互的过程——因为法律与法官对它的适用彼此激发，并叠加其效果。</p>
+
+  <p>于是，刑事法官对政治人物或公共权力代表(市长、警察、宪兵……)扩张性地解释各种刑事定性(挪用公款、非法牟利、「非相称」使用配枪致人死亡……)，并对他们精力充沛地适用相应条款(判处最高刑、禁选附即时执行……)。反过来，对普通犯罪(街头暴力、拒不服从并侮辱、威胁公共权力人员……)，当行为人非累犯时，他判处的刑罚明显低于刑法所定上限、并几乎系统性地适用缓刑。若面对日常犯罪，刑事法官多半避免监禁，那么面对一位被控「组织犯罪团伙」的前共和国总统时，他似乎被相反的反射所驱动。巴黎司法法院在所谓 2007 年竞选「利比亚融资」案中对 <em class="fr">Nicolas Sarkozy</em> 签发收押令时，不正认为须附加即时执行吗？政治人物怎能不被这种对「视你强大或卑微，法庭之判将令你白或黑」这句格言的颠倒所惊怵？<span class="annot" data-pop="q-sch-fable">⁠<sup>*</sup></span>⁠对于某些法官而言，他们想要树立一种具有净化作用的制衡力量的意愿，源于对政治体制和国家机器的怨恨。上诉法院是否曾试图与这种偏离正轨的现象划清界限？</p>
+  <div class="annot-text" id="q-sch-fable">原文：«&nbsp;selon que vous serez puissant ou misérable, les jugements de cour vous rendront blanc ou noir&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.16(Schoettl)· 引 La Fontaine 寓言</span></div>
+
+  <blockquote class="lead">
+    <p class="zh">对于某些法官而言，他们想要树立一种具有净化作用的制衡力量的意愿，源于对政治体制和国家机器的怨恨。上诉法院是否曾试图与这种偏离正轨的现象划清界限？</p>
+    <p class="fr">Chez certains magistrats, la volonté de camper un contre-pouvoir purificateur se nourrit d'un ressentiment contre le système politique et contre l'appareil d'État. La cour d'appel a-t-elle voulu se démarquer de cette dérive ?</p>
+    <p class="src">原报以加框大字呈现 · <em class="fr">Le Figaro</em> P.16</p>
+  </blockquote>
+
+  <p>过往能为衡量这种偏移的幅度提供参照。一桩二十来年前曾轰动政治—司法丑闻编年史的审判，即见证了法官对政治界日益增长的严厉：2004 年，<em class="fr">Alain Juppé</em>——时为 2007 年总统大选的潜在候选人——在所谓「巴黎市虚假职位」案中一审被判 10 年禁选<span class="annot" data-pop="q-mairie">⁠<sup>*</sup></span>⁠，二审则将其禁选刑期减为一年。上诉法院为这一大幅缩减所举的理由，是全然不存在个人牟利。迄今，这一因素在 FN 欧洲议员助理案里几乎未被计入，一审所判、上诉所求的禁选刑期，都比 <em class="fr">Juppé</em> 案长得多。而「巴黎市虚假职位」案与 RN 欧洲议员助理案彼此相邻，两者的差别并不足以证成如此悬殊的处理——上诉法院或许作了这样的判断。</p>
+  <div class="annot-text" id="q-mairie">「巴黎市虚假职位」案(<em class="fr">affaire des emplois fictifs de la Ville de Paris</em>)：1990 年代 RPR 借巴黎市政府之名给党务人员发放虚假职位薪水的案件，<em class="fr">Jacques Chirac</em>、<em class="fr">Alain Juppé</em> 等涉案。<em class="fr">Juppé</em> 2004 年因此被定罪。作者用它与 RN 助理案类比——两案性质相邻，量刑却相差悬殊。<span class="annot-tier">〔背景层 · 案件〕</span></div>
+
+  <p>本案所追究的过错(关联的是已属陈年的行为)，在于 FN 欧洲议员由欧洲议会配给的某些助理，被 FN 当选者用于其欧洲议员职责之外的其他工作。这一做法自始固然可议，但在案发年代并未被欧洲议会明确禁止，且 FN 之外的其他团体也曾如此行事、却未在同等程度上受到追究。它既未导致 FN 欧洲议员个人牟利，也未使欧洲议会受损<span class="annot" data-pop="q-prejudice">⁠<sup>*</sup></span>⁠。这些议会助理的正常任用，无论如何都会服务于 FN 当选者、并间接服务于其党——议员的活动与其在党内的行动本就密不可分。在本案中，欧洲议会公款的挪用，分析起来并非个人牟利，也非把不属于 FN 的资金截留给 FN，而是把欧洲议会无论如何都拨给该党运作的一笔款项，在内部改变了用途：本用于其在欧洲议会框架内行动的经费，被用到了 FN 的全国性行动上。这固然遗憾，但还不至于证成一审所判之严厉。</p>
+  <div class="annot-text" id="q-prejudice">原文：«&nbsp;<em class="fr">elle n'a entraîné ni enrichissement personnel des eurodéputés du FN, ni appauvrissement du Parlement européen</em>&nbsp;»。<br><strong>这是作者 <em class="fr">Schoettl</em> 的观点，非官方结论——且与官方判决相反，须并陈：</strong><br><strong>① 关于「个人牟利」</strong>：此点官方与作者一致——判决确认 FN 欧洲议员<strong>未从中个人获利</strong>（款项用于充实 FN 党库，非私人腰包）。<br><strong>② 关于「未使议会受损」</strong>：此为作者的辩护性论证（理由是「这些助理经费反正都要花」），<strong>但官方判决认定恰恰相反</strong>：欧洲议会正是<strong>以受损方身份报案</strong>（2015 年 3 月）、并作为民事原告参加诉讼；巴黎上诉法院明确认定该挪用给欧洲议会造成 <strong>逾 280 万欧元的损害</strong>（<em class="fr">préjudice de plus de 2,8 millions d'euros</em>），民事部分将议会财务损害定为 1 943 696,31 欧元、另加 15 万欧元精神损害。<br><strong>③ 法律要点</strong>：第 432-15 条挪用罪<strong>本就不以「个人牟利」或「造成损害」为构成要件</strong>——只要公款被用于非其目的即可成立。故「无牟利／无损害」在法律上不构成无罪理由；作者以此质疑定罪，是其立场，非判决所采。<br><span style="font-size:12px;color:var(--gris);">source：作者观点见《<em class="fr">Le Figaro</em>》2026-7-8 P.16（<em class="fr">Schoettl</em>）；官方损害认定据巴黎上诉法院新闻公报（<em class="fr">cours-appel.justice.fr</em>）、franceinfo、Boursorama 报道（2026-7-7）</span><span class="annot-tier">〔分析层 · 法律争点〕</span></div>
+
+  <p>但尤为关键的是，那道五年禁选刑，禁止 <em class="fr">Marine Le Pen</em> 竞逐 2027 年的总统职位。而判处一位政治人物禁选，会把司法官置于一种精神分裂式的处境——面对「以其名义行使审判的人民」，他们却因此被引向限制选民的选择自由。<span class="annot" data-pop="q-sch-peuple">⁠<sup>*</sup></span>⁠何况这里事关头号选举、事关民调中位置最佳的政党！怎能看不出，这提出了一个民主正当性的根本问题？禁选对人民主权的侵害，也曾在宪法委员会 2025 年 3 月 28 日的一项裁决中、就其即时执行招致一项保留：禁选不应对进行中的委任、也不应对公民在未来选举中的选择自由，产生不成比例的影响。<span class="annot" data-pop="q-sch-cc">⁠<sup>*</sup></span>⁠倘若我们承认人民缺乏道德辨别力、因而须由司法机关按其对候选人德性的看法来筛选候选人，我们就将滑向「法官的政府」。通过对这些考量表现出敏感——正如其新闻公报所示——上诉法院表明了：并非所有法官都是 <span class="annot" data-pop="torquemada">托尔克马达⁠<sup>*</sup></span>⁠。</p>
+  <div class="annot-text" id="q-sch-peuple">原文：«&nbsp;une situation schizophrénique à l'égard de ce peuple au nom duquel ils jugent, puisqu'elle les conduit à restreindre la liberté de choix de l'électeur&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.16(Schoettl)</span></div>
+  <div class="annot-text" id="q-sch-cc">原文：«&nbsp;l'inéligibilité ne doit avoir d'effet disproportionné ni sur un mandat en cours, ni sur la liberté de choix des citoyens lors d'élections futures&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Figaro</em> P.16(Schoettl)· 述宪法委员会 2025-3-28 裁决保留</span></div>
+  <div class="annot-text" id="torquemada">Tomás de Torquemada(1420–1498)，西班牙宗教裁判所首任大审判官，以严酷迫害著称，在西方语汇里是「狂热审判者／宗教裁判」的代名词。作者以「并非所有法官都是托尔克马达」收尾，肯定上诉法院对民主后果的克制。<span class="annot-tier">〔背景层 · 典故〕</span></div>
+
+  <p class="src" style="font-style:italic;color:var(--gris);"><em class="fr">Jean-Éric Schoettl</em> 为宪法委员会前秘书长。</p>
+  <div class="srcfoot">本节译自《<em class="fr">Le Figaro</em>⁠》⁠· 2026 年 7 月 8 日 · N° 25 461 · P.16 · CHAMPS LIBRES / DÉBATS · 署名 <em class="fr">Jean-Éric Schoettl</em>(署名评论，观点属作者本人)</div>
+</section>
+
+<!-- ========================= 8. 评论 LP 社论 Dégagisme ========================= -->
+<section class="story" id="edito">
+  <div class="rubrique lp">LE PARISIEN · L'ÉDITO · P.2 · N° 25 465(8 juillet)</div>
+  <h1 class="titre">社论：反建制主义</h1>
+  <p class="titre-fr">Dégagisme · par <em class="fr">Nicolas Charbonneau</em>，Directeur des rédactions</p>
+
+  <p>上诉法院担心，一份禁止 <em class="fr">Marine Le Pen</em> 参选 2027 的裁决会招致批评。于是它给她下了某种套：定罪，却留她自己决定选不选——因为这位 RN 议员团主席早已「自我设障」，声明过无法戴着电子手环竞选。</p>
+
+  <p>这是 2012 年以来，她第一次可能从政治版图上消失。就在她这一回俨然是大热门之际，像被踩了一脚急刹。她的对手们已经在暗自庆幸，以为牌局将被重新洗过；可这是不了解那头「政治动物」——有时相当可畏，尤其当她知道能倚靠自己的选民时。与此同时，一份份民调里，<em class="fr">Jordan Bardella</em> 一点点蚕食着地盘，不再是那个被人以「总统大选之艰险」为由唱衰的、脆弱的「B 计划」。可「<em class="fr">Jordan</em> 不是 <em class="fr">Marine</em>」——在这个以名相称的党里，<span class="annot lp" data-pop="q-edito-jm">⁠<sup>*</sup></span>⁠空气中弥漫着一丝淡淡的不公与错失良机的气息——正是他们口中那场「被法官偷走的大选」。在 RN 选民中，人们与「<em class="fr">Marine</em>」相认同。受害，如同他们；被苛待，如同他们；反体系，如同他们。而她说，正是为了他们，她才决定参选。</p>
+  <div class="annot-text" id="q-edito-jm">原文：«&nbsp;Jordan n'était pas Marine&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.2 社论 · 述党内说法</span></div>
+
+  <p>说这份定罪是一座奖杯，当然不是。它将是即将展开的竞选里的一块<span class="annot lp" data-pop="sparadrap">橡皮膏⁠<sup>*</sup></span>⁠，但很可能不会成为投票意向里的负担。这份「抗议之票」如今已变为「认同之票」<span class="annot lp" data-pop="q-vote-adhesion">⁠<sup>*</sup></span>⁠，皆因「<span class="annot lp" data-pop="degagisme">反建制主义⁠<sup>*</sup></span>⁠」(dégagisme)一词——那正是人们在 <em class="fr">Marine Le Pen</em> 支持者口中最常听到的词。</p>
+  <div class="annot-text" id="q-vote-adhesion">原文：«&nbsp;Ce vote protestataire devenu vote d'adhésion&nbsp;»。<br>社论讲的是<strong>同一批选票性质的演变</strong>，非两位人物之别：<em class="fr">vote protestataire</em>（抗议之票）指早年投国民阵线多为发泄不满、惩罚建制的抗议性投票；<em class="fr">vote d'adhésion</em>（认同／归心之票）指如今这批票已转为发自认同、主动拥护。<em class="fr">devenu</em> 即「已变成」——意谓这批 RN 选票已从「泄愤」转为「真心拥护」，故定罪之类污点对他们几乎不构成阻碍。<span class="annot-tier">〔背景层 · 用词〕</span></div>
+  <div class="annot-text" id="sparadrap">法语 <em class="fr">sparadrap</em> 即「橡皮膏／创可贴」，常用于「甩不掉的橡皮膏」这一意象(如粘在手指上甩不脱)。社论以此形容定罪之于竞选：讨厌、甩不干净，却未必致命。<span class="annot-tier">〔背景层 · 意象〕</span></div>
+  <div class="annot-text" id="degagisme">dégagisme(反建制主义／「都给我滚」)源自阿拉伯之春的口号 <em class="fr">Dégage !</em>(滚开！)，在法国政治语汇里指选民对现有执政者与建制精英的整体唾弃、要求「全部换掉」的情绪。社论以此点出 RN 选票的性质转变。<br><span style="font-size:12px;color:var(--gris);">source：词源通识（阿拉伯之春口号 <em class="fr">Dégage !</em>）；法国政治语汇常用义</span><span class="annot-tier">〔背景层 · 政治话语〕</span></div>
+  <div class="srcfoot">本节译自《<em class="fr">Le Parisien</em>⁠》⁠· 2026 年 7 月 8 日 · N° 25 465 · P.2 · L'ÉDITO · 署名 <em class="fr">Nicolas Charbonneau</em>(社论，观点属该报编辑部)。</div>
+</section>
+
+<!-- ========================= 9. 评论 Fourquet 专访 ========================= -->
+<section class="story" id="fourquet">
+  <div class="rubrique lp">LE PARISIEN · L'EXPERT · P.5 · N° 25 465(8 juillet)</div>
+  <h1 class="titre">专访：「一种前所未见、非同寻常的局面」</h1>
+  <p class="titre-fr">«&nbsp;Une situation inédite et hors norme&nbsp;» · Propos recueillis par <em class="fr">Olivier Beaumont</em></p>
+  <p class="chapo">Ifop 舆论与策略部主任 <em class="fr">Jérôme Fourquet</em>，为本报分析 <em class="fr">Marine Le Pen</em> 参选的决定及其政治后果。</p>
+
+  <div class="interview">
+  <p class="q">尽管上诉被定罪，<em class="fr">Marine Le Pen</em> 仍参选。她的选民能理解这个决定吗？</p>
+  <p class="a"><em class="fr">Jérôme Fourquet</em>：能，因为国民联盟的选民长期把自己视为一个政治—媒体—司法体系的受害者。尤其自这一程序开始以来——在他们看来，它旨在阻止 <em class="fr">Marine Le Pen</em> 上台。</p>
+
+  <p class="q">这预示着什么？</p>
+  <p class="a">我们面对的是一种前所未见、非同寻常的局面，很难预料其走向。不过，关于选民行为，我们已有一些线索——我指的是去年春天 Perpignan 的市镇选举：同案被判的 RN 现任市长 <em class="fr">Louis Aliot</em> 首轮即连任。投票前，在「上诉维持定罪」的设想下，78% 的 <em class="fr">Aliot</em> 潜在选民当时称这不会影响自己的选择，12% 称会更倾向投他。这种被围困的城堡的条件反射，在这批选民中分量极重。而 <em class="fr">Marine Le Pen</em> 大概正要在这上面做文章。</p>
+
+  <p class="q">她本也可以把战场让给 <em class="fr">Jordan Bardella</em>……</p>
+  <p class="a">有三个要素可解释这一决定。第一，是与她从此案开始就持有的司法辩护路线保持一致——即坚称既无个人牟利、也无党的牟利，而这种对法条解释的分歧，使一次最高法院上诉具备正当性。第二个很重要的要素，是发出她全然坚定的信号；其潜台词，是表明国家须由一个「有能力在狂风中稳住航向」的人来掌舵。<span class="annot lp" data-pop="q-fq-cap">⁠<sup>*</sup></span>⁠第三个要素，是体现一种真正的替代选择。对她而言，(她的命运)该由法国人民来裁决。</p>
+  <div class="annot-text" id="q-fq-cap">原文：«&nbsp;montrer qu'il faut que le pays soit doté à sa barre de quelqu'un qui a la capacité de maintenir le cap dans la force des vents&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.5 · <em class="fr">Jérôme Fourquet</em></span></div>
+
+  <p class="q">在这种情形下，她还能竞选吗？</p>
+  <p class="a">她的对手当然有现成的弹药。这种背景噪音会不断回来，可以想见，她走到哪里，都会被敲着锅的人群迎接。<span class="annot lp" data-pop="q-fq-casse">⁠<sup>*</sup></span>⁠但某种程度上，她对此早有准备。</p>
+  <div class="annot-text" id="q-fq-casse">原文：«&nbsp;partout où elle ira, elle sera accueillie par des cortèges de gens tambourinant sur des casseroles&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.5 · <em class="fr">Jérôme Fourquet</em></span></div>
+
+  <p class="q">如果换成 <em class="fr">Bardella</em>，会不会比她更容易？</p>
+  <p class="a">从 Ifop 最近的投票意向看，他的选举潜力好过她。但这大概是因为一部分选民已经默认她不会参选。如今，我们从完全不同的基点重新出发。她会把与 <em class="fr">Bardella</em> 的搭档打到极致。在法国政治生活里，与自己未来的总理携手竞选，是相当前所未见的。</p>
+
+  <p class="q">竞选真正从现在开始了？</p>
+  <p class="a">它其实已经开始，但此刻是一个十分重要的时刻——一个党以一个搭档为首、以整装待发的姿态登场。与 <em class="fr">Jean-Luc Mélenchon</em> 的类比很鲜明：他以一句话起跑——在他那里，有一个纲领、一个候选人、一支队伍，也就是「军队已在行进，有它的将军和清晰的战略」。<span class="annot lp" data-pop="q-fq-armee">⁠<sup>*</sup></span>⁠在 RN 也一样。于是我们看到两台极度极化的机器全速启动，而其他政治力量还在为提名与分高下的方式互相撕扯……</p>
+  <div class="annot-text" id="q-fq-armee">原文：«&nbsp;l'armée est en marche, avec son général et une stratégie claire&nbsp;»<br><span style="font-size:12px;color:var(--gris);"><em class="fr">Le Parisien</em> P.5 · <em class="fr">Jérôme Fourquet</em>，述 Mélenchon 类比</span></div>
+  </div>
+  <div class="srcfoot">本节译自《<em class="fr">Le Parisien</em>⁠》⁠· 2026 年 7 月 8 日 · N° 25 465 · P.5 · L'EXPERT · 受访者 <em class="fr">Jérôme Fourquet</em>(Ifop)· 采访 <em class="fr">Olivier Beaumont</em>(受访者观点属其本人)。</div>
+</section>
+
+</article>
+
+<!-- ===== Copyright ===== -->
+<div class="copyright">
+  <div class="block-zh">
+    <p>本页各节译自《<em class="fr">Le Figaro</em>⁠》⁠· 2026 年 7 月 8 日 · N° 25 461 · P.2–4、P.16(<em class="fr">Lucas Hélin</em>、<em class="fr">Stéphane Durand-Souffland</em>、<em class="fr">Paul Laubacher</em>、<em class="fr">Jean-Éric Schoettl</em> 等)</p>
+    <p>及《<em class="fr">Le Parisien</em>⁠》⁠· 2026 年 7 月 8 日 · N° 25 465 · P.2–5(<em class="fr">Alexandre Sulzer</em>、<em class="fr">Timothée Boutry</em>、<em class="fr">Thomas Soulié</em>、<em class="fr">Alison Tassin</em>、<em class="fr">Mattias Bourgeois</em>、<em class="fr">Nicolas Charbonneau</em>、<em class="fr">Jérôme Fourquet</em> 访谈等)· 各节出处详见文末来源标注</p>
+    <p>报道所涉判决主文数值(45 个月禁选 / 30 个月缓刑 / 15 个月已服 / 3 年监禁含 1 年实刑 / 10 万欧元罚金 / 连带赔偿)以两报原文为准；两报个别口径差异已在正文注释中照录说明</p>
+    <p id="num-note"><strong>法语数字读法说明</strong>：本页保留了原报的<strong>法式数字写法</strong>，其与中文／英文习惯相反——① <strong>小数点用逗号「,」</strong>：如「<em class="fr">2,8 millions</em>」即 2.8 百万（≈280 万），「<em class="fr">1,9 M€</em>」即 1.9 百万欧元（≈190 万欧元），「<em class="fr">1,943 million</em>」即约 1.943 百万（≈194.3 万）；② <strong>千位分隔用空格</strong>（而非逗号）：如「<em class="fr">1 943 696,31 €</em>」即 1943696.31 欧元、「<em class="fr">71 883</em>」即 71883。换言之，法语的「,」相当于中英文的小数点「.」，法语的空格相当于中英文的千位逗号「,」。例如法语「<em class="fr">3,14</em>」＝中文「3.14」，切勿读作「314」。此规则有官方与学术依据（法国 <em class="fr">AFNOR</em> 标准 NF X 02-003；国际度量衡局 <em class="fr">BIPM</em> 自 1948 年起规定千位以空格分隔、不用逗号或点；<em class="fr">ISO 80000-1</em>）。<br><span style="font-size:12px;color:var(--gris);">source：法国标准化协会 <em class="fr">AFNOR</em> NF X 02-003（2012）；国际度量衡局（<em class="fr">BIPM</em>，第 9／22 届 CGPM 决议）；<em class="fr">Wikipédia</em>「<em class="fr">Séparateur décimal et séparateur de milliers</em>」</span></p>
+    <p><strong>外源引用说明</strong>：本页部分注释引用了原报之外的公开来源，按类别列举如下——<strong>官方法律文本</strong>：法国《刑法典》第 432-15 条、《刑事诉讼法》第 567／568／569 条、2016 年 Sapin II 法等（法国政府法规数据库 <em class="fr">Légifrance</em>）；<strong>官方司法／行政文书</strong>：巴黎上诉法院 2026 年 7 月 7 日新闻公报（<em class="fr">cours-appel.justice.fr</em>）、法国司法部司法组织说明（<em class="fr">Justice.fr</em>）、最高法院刑事庭 2018 年 6 月 27 日判例（<em class="fr">Cass. crim. n° 18-80.069</em>）与 1993 年 9 月 28 日判例（<em class="fr">n° 92-85.473</em>）；<strong>权威媒体报道</strong>（用于核录一审量刑等事实）：<em class="fr">franceinfo</em>、<em class="fr">Public Sénat</em>、<em class="fr">Touteleurope</em>、<em class="fr">Boursorama</em>、<em class="fr">France 24</em> 等；<strong>参考资料</strong>：<em class="fr">Wikipédia</em>、法国宪法委员会官网、<em class="fr">Lexbase</em> 及作者著作（<em class="fr">Gallimard</em>）等，用于人物与词源背景。上述外源<strong>仅用于注释中的背景补充与事实核对，均已在相应注释处标注 source；原报正文的翻译一律以两报原文为准，未据外源作任何改动</strong>。各条注释的具体出处，见该注释内的 source 标注。</p>
+    <p><em class="fr">Le Figaro</em> 原文参见：<em class="kiosque-link">lefigaro.fr</em> 主站 Mon compte；或通过 Kiosque Figaro 应用(iOS / Android)访问当期日刊</p>
+    <p><em class="fr">Le Parisien</em> 原文参见：<em class="kiosque-link">kiosque.leparisien.fr</em> · 翻至 2026 年 7 月 8 日刊</p>
+    <p>原文著作权分别归 Société du Figaro SAS 与 Le Parisien libéré SAS 所有 — <em class="fr">Tous droits réservés</em></p>
+    <p>本页为摘译稿，仅供个人法语学习</p>
+    <p>禁止任何商业用途、复制转载、改编、上传或二次出版页面内容</p>
+    <p>署名评论各节(<em class="fr">Schoettl</em> / <em class="fr">Le Parisien</em> 社论 / <em class="fr">Fourquet</em> 访谈)的判断均属各署名作者或受访者本人</p>
+    <p>如需引用，请以《<em class="fr">Le Figaro</em>⁠》⁠《<em class="fr">Le Parisien</em>⁠》⁠原报道为准并标明出处</p>
+  </div>
+  <hr class="sep-line">
+  <div class="block-fr">
+    <p>Traduction partielle du <em>Figaro</em> · 8 juillet 2026 · N° 25 461 · P.2–4, P.16 (Lucas Hélin, Stéphane Durand-Souffland, Paul Laubacher, Jean-Éric Schoettl…).</p>
+    <p>Et du <em>Parisien</em> · 8 juillet 2026 · N° 25 465 · P.2–5 (Alexandre Sulzer, Timothée Boutry, Thomas Soulié, Alison Tassin, Mattias Bourgeois, Nicolas Charbonneau, entretien avec Jérôme Fourquet…). Sources indiquées en pied de chaque section.</p>
+    <p>Les chiffres du dispositif (45 mois d'inéligibilité dont 30 avec sursis, 15 mois purgés, 3 ans de prison dont 1 an ferme, 100 000 € d'amende, dommages solidaires) sont donnés d'après les deux journaux ; les écarts ponctuels entre eux sont signalés en note.</p>
+    <p><strong>Sources externes citées</strong> : certaines notes de cette page renvoient à des sources publiques extérieures aux deux journaux, réparties comme suit — <strong>textes de loi officiels</strong> : art. 432-15 du Code pénal, art. 567/568/569 du Code de procédure pénale, loi Sapin II de 2016 (<em>Légifrance</em>) ; <strong>documents judiciaires et administratifs officiels</strong> : communiqué de la cour d'appel de Paris du 7 juillet 2026 (<em>cours-appel.justice.fr</em>), organisation judiciaire (ministère de la Justice, <em>Justice.fr</em>), arrêt de la chambre criminelle de la Cour de cassation du 27 juin 2018 (<em>Cass. crim. n° 18-80.069</em>) et du 28 septembre 1993 (<em>n° 92-85.473</em>) ; <strong>médias de référence</strong> (pour le recoupement des peines de première instance, etc.) : <em>franceinfo</em>, <em>Public Sénat</em>, <em>Touteleurope</em>, <em>Boursorama</em>, <em>France 24</em> ; <strong>documentation</strong> : <em>Wikipédia</em>, site du Conseil constitutionnel, <em>Lexbase</em>, ouvrages cités (<em>Gallimard</em>). Ces sources externes servent uniquement au contexte et à la vérification des notes, et sont indiquées à chaque note concernée ; la traduction du texte des articles suit exclusivement les deux journaux, sans modification tirée de ces sources.</p>
+    <p><em>Figaro</em> · article original : <em class="kiosque-link">lefigaro.fr</em> (Mon compte) ou via l'application Kiosque Figaro (iOS / Android), accès au PDF du jour.</p>
+    <p><em>Parisien</em> · article original : <em class="kiosque-link">kiosque.leparisien.fr</em> · naviguer au journal du 8 juillet 2026.</p>
+    <p>Tous les droits d'auteur appartiennent respectivement à la Société du Figaro SAS et à Le Parisien libéré SAS — <em>Tous droits réservés</em>.</p>
+    <p>Traduction abrégée à usage personnel pour l'apprentissage du français.</p>
+    <p>Toute reproduction commerciale, retransmission, adaptation, mise en ligne ou réédition du contenu de cette page est interdite.</p>
+    <p>Les analyses signées (Schoettl, l'édito du Parisien, l'entretien de Fourquet) n'engagent que leurs auteurs ou l'intéressé.</p>
+    <p>Pour toute citation, se référer aux reportages originaux du <em>Figaro</em> et du <em>Parisien</em> et indiquer la source.</p>
+  </div>
+  <p class="footer-claude">Claude [Anthropic] 译</p>
+</div>
+
+<a href="#" class="totop" id="backTop" aria-label="回到顶部">↑</a>
+<a href="#" class="tobottom" id="backBottom" aria-label="回到底部">↓</a>
+
+<script>
+const notesToggle=document.getElementById('notesToggle'),
+      notesBtnLabel=document.getElementById('notesBtnLabel'), body=document.body;
+notesToggle.addEventListener('click', () => {
+  body.classList.toggle('notes-open');
+  notesBtnLabel.textContent = body.classList.contains('notes-open') ? 'Hide notes' : 'Notes';
+});
+document.querySelectorAll('.annot').forEach(el => {
+  el.addEventListener('click', e => {
+    e.stopPropagation();
+    const id=el.dataset.pop; if(!id) return;
+    const target=document.getElementById(id); if(!target) return;
+    document.querySelectorAll('.annot-text.open').forEach(t => { if(t!==target) t.classList.remove('open'); });
+    target.classList.toggle('open');
+  });
+});
+document.addEventListener('click', e => {
+  if(!e.target.closest('.annot') && !e.target.closest('.annot-text')){
+    document.querySelectorAll('.annot-text.open').forEach(t => t.classList.remove('open'));
+  }
+});
+const backTop=document.getElementById('backTop');
+const backBottom=document.getElementById('backBottom');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('visible', window.scrollY>600);
+  const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
+  backBottom.classList.toggle('visible', !nearBottom);
+});
+backTop.addEventListener('click', e => { e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); });
+backBottom.addEventListener('click', e => { e.preventDefault(); window.scrollTo({top:document.documentElement.scrollHeight,behavior:'smooth'}); });
+backBottom.classList.add('visible');
+</script>
+</body>
+</html>
